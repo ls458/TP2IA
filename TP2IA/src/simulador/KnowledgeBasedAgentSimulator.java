@@ -8,7 +8,10 @@ import java.util.Scanner;
 import java.util.Vector;
 
 import chatbot.ChatbotAgent;
+import chatbot.ChatbotEnvironment;
+import sistemadeproduccion.GestorDeFrases;
 import sistemadeproduccion.ProductionSystemAction;
+import tp2ia.InterfaceUpdater;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Agent;
 import frsf.cidisi.faia.agent.Perception;
@@ -22,6 +25,8 @@ import frsf.cidisi.faia.simulator.events.SimulatorEventNotifier;
  */
 public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Simulator {
 
+	private final int SLEEP_TIME = 2500;
+	
 	/**
 	 * Constructor.
 	 * @param environment
@@ -72,22 +77,25 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         		+ "¿Desea saber algo más?");
         respuestasFinEncuesta.add("Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?");
         agent.empezarConversacion(); //Se coloca el saludo inicial para poder ejecutarse en el environment
-    	agent.ejecutarRegla("Hola");
-        do {
-        	
-        	try {
-				inputUsuario = br.readLine();
-	            respuesta = agent.ejecutarRegla(inputUsuario);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 
+    	InterfaceUpdater.agregarRespuestaBot(agent.ejecutarRegla("Hola"));
+        do {
+        	//Espera hasta que el usuario introdusca una respuesta para el chatbot
+        	while(ChatbotEnvironment.respuestaUsuario == null) {
+        		//Espera SLEEP_TIME milisegundos para volver a revisar si el usuario ya ha contestado
+        		try { Thread.sleep(SLEEP_TIME); }
+        		catch (InterruptedException e) { e.printStackTrace(); }
+        	}
+        	inputUsuario = ChatbotEnvironment.respuestaUsuario;
+        	ChatbotEnvironment.respuestaUsuario = null;
+            respuesta = agent.ejecutarRegla(inputUsuario);
+        	
             if (respuesta == null)
             	System.out.println("\nRule to execute: None");
             else
             {
             	System.out.println("\nRespuesta del robot: " + respuesta);
+            	InterfaceUpdater.agregarRespuestaBot(respuesta);
             }
             System.out.println();
         	
@@ -111,19 +119,22 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
 //            Scanner in= new Scanner(System.in);
 //            String inputUsuario = in.next();
             
-			try {
-				inputUsuario = br.readLine();
-	            respuesta = agent.learn(inputUsuario);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        	//Espera hasta que el usuario introdusca una respuesta para el chatbot
+        	while(ChatbotEnvironment.respuestaUsuario == null) {
+        		//Espera SLEEP_TIME milisegundos para volver a revisar si el usuario ya ha contestado
+        		try { Thread.sleep(SLEEP_TIME); }
+        		catch (InterruptedException e) { e.printStackTrace(); }
+        	}
+        	inputUsuario = ChatbotEnvironment.respuestaUsuario;
+        	ChatbotEnvironment.respuestaUsuario = null;
+            respuesta = agent.learn(inputUsuario);
 
             if (respuesta == null)
             	System.out.println("\nRule to execute: None");
             else
             {
             	System.out.println("\nRespuesta del robot: " + respuesta);
+            	InterfaceUpdater.agregarRespuestaBot(respuesta);
             }
             System.out.println();
 

@@ -17,6 +17,6 @@ public class ChatbotMain {
 	                new KnowledgeBasedAgentSimulator(environment, agent);
 	        
 	        simulator.start();
-	    }
+	 }
 	
 }

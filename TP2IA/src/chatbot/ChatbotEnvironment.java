@@ -9,6 +9,9 @@ import sistemadeproduccion.Tema;
 
 public class ChatbotEnvironment extends Environment {
 	
+	/***Esta variable sirve únicamente para comunicar el hilo de la interface y el hilo de trabajo del chatbot*/
+	public static String respuestaUsuario;
+	
 	public static ArrayList<Rule> reglasMemoriaProduccion = new ArrayList<Rule>();
 
 	public static void inferencia (Rule regla) {
@@ -45,5 +48,6 @@ public class ChatbotEnvironment extends Environment {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	
 }
