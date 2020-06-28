@@ -12,7 +12,7 @@ public class GestorDeFrases {
 		ArrayList<String> palabras = new ArrayList<String>();
 		
 		String[] palabrasBase = textoUsuario.toLowerCase().replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
-				.replace(',', ' ').replace('.', ' ').replace('?', ' ').replace('¿', ' ').replace(';', ' ').split(" ");
+				.replace(',', ' ').replace('!', ' ').replace('¡', ' ').replace('.', ' ').replace('?', ' ').replace('¿', ' ').replace(';', ' ').split(" ");
 		
 		String aux;
 		for(int i=0; i<palabrasBase.length; i++) {

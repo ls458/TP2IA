@@ -5,6 +5,7 @@
  */
 package tp2ia;
 
+import java.lang.Thread.State;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +20,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import simulador.KnowledgeBasedAgentSimulator;
 
 /**
@@ -47,36 +49,33 @@ public class ChatWindowController implements Initializable {
         
     	//Configura interface
     	InterfaceUpdater.setChatWindow(this);
+    	engine.setUserStyleSheetLocation(getClass().getResource("resources/style.css").toString());
+    	htmlContent.append("<script> \r\n" + 
+    			"function scrollBottom() {window.scrollTo(0, 99999);}\r\n" + 
+    			"if (document.addEventListener) document.addEventListener(\"DOMContentLoaded\", scrollBottom, false)\r\n" + 
+    			"else if (window.attachEvent) window.attachEvent(\"onload\", scrollBottom);\r\n" + 
+    			"</script>");
     	comenzarSimulacion();
     }    
     
     @FXML
     private void agregarRespuestaUsuario(ActionEvent event){
         if( ! tfInput.getText().isEmpty()){
-            //htmlContent.append("<p style=\"text-align: right; color:green; margin-top:0em; margin-bottom:0.5em;\"><span style=\"font-size:18px;\">"+tfInput.getText()+"</span></p>");
-            htmlContent.append("<div style=\"display: flex; justify-content: flex-end; margin-left: 20%; margin-bottom: 4px;\">"
-                    + "<span style=\"background-color: #f2f2f2; padding: 5px 15px 5px 10px; border-left: 6px solid #2d862d;"
-                    + "border-radius: 0px 0px 0px 4px; float: right; overflow: hidden; word-wrap: break-word;\">"
-                    + "<p style=\"margin:0.25em;\">" + tfInput.getText()+"</p></span></div>");
+        	htmlContent.append("<div class=\"user\"><span class=\"user\"><p>" + tfInput.getText() + "</p></span></div>");
             engine.loadContent(htmlContent.toString());
             ChatbotEnvironment.respuestaUsuario = tfInput.getText();
+            tfInput.clear();
         }
     }
     
     public void agregarRespuestaBot(String text){
-        //htmlContent.append("<p style=\"text-align: left;\"><span style=\"font-size:18px;\">"+text+"</span></p>");
-        htmlContent.append("<div style=\"display: flex; margin-right: 20%; margin-bottom: 5px;\">"
-                    + "<span style=\"background-color: #f2f2f2; padding: 5px 10px 5px 15px; border-right: 6px solid #33ccff;"
-                    + "border-radius: 0px 0px 4px 0px; overflow: hidden; word-wrap: break-word;\">"
-                    + "<p style=\"margin:0.25em;\">" + text +"</p></span></div>");
+    	htmlContent.append("<div class=\"chatbot\"><span class=\"chatbot\"><p>" + text + "</p></span></div>");
         engine.loadContent(htmlContent.toString());
     }
     
-    @FXML
-    private void initialized(ActionEvent event) {
-    	comenzarSimulacion();
+    public void close() {
+    	((Stage) tfInput.getScene().getWindow()).close();
     }
-    
     
     public void comenzarSimulacion() {
     	
@@ -102,5 +101,19 @@ public class ChatWindowController implements Initializable {
     	};
     	
         thre.start();
+    }
+    
+    /***Termina la ejecución del hilo de búsqueda***/
+    public static void closeSearchThread() {
+    	if(thre!=null) {
+    		if(!thre.isAlive())
+    			return;
+    		
+    		//Evita interrumpirlo mientras el hilo está dormido para evitar una exception
+    		while(thre.getState()==State.TIMED_WAITING) {
+    			
+    		}
+    		thre.interrupt();
+    	}
     }
 }

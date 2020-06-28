@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import chatbot.ChatbotEnvironment;
+import tp2ia.InterfaceUpdater;
 
 /**
  * Clase que implementa el criterio de no duplicacion.
@@ -43,8 +44,16 @@ public class NoDuplication {
 				}
 			}
 			
+			for(Rule r : reglasAEjecutar) {
+				InterfaceUpdater.addToLog("Regla salida no duplicación [id: " + r.id + "]: " + r.toString());
+			}
+			
 			return reglasAEjecutar;
 			
+		}
+		
+		for(Rule r : listaReglas) {
+			InterfaceUpdater.addToLog("Regla salida no duplicación [id: " + r.id + "]: " + r.toString());
 		}
 		
 		System.out.println("Antedcedente no coincide!");

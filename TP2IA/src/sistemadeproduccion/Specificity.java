@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import chatbot.ChatbotEnvironment;
+import tp2ia.InterfaceUpdater;
 
 /**
  * Clase que implementa el criterio de especificidad.
@@ -26,6 +27,10 @@ public class Specificity{
 			else if(r.getSpecificity() == mayorEspecificidad){
 				reglasAEjecutar.add(r);
 			}
+		}
+		
+		for(Rule r : reglasAEjecutar) {
+			InterfaceUpdater.addToLog("Regla salida especificidad [id: " + r.id + "]: " + r.toString() + ", especificidad:" +r.getSpecificity());
 		}
 		
 		return reglasAEjecutar;

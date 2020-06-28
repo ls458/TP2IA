@@ -73,7 +73,7 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         ArrayList<String> respuestasFinEncuesta = new ArrayList<String>();
         respuestasFinEncuesta.add("Manténgase tranquilo, usted no es paciente de riesgo. Si la situación empeora "
         		+ "no dude en buscar asistencia médica. ¿Tiene alguna pregunta para hacer?");
-        respuestasFinEncuesta.add("Le recomendamos que busque atención médica, no quisiéramos que su salud empeore.\n"
+        respuestasFinEncuesta.add("Le recomendamos que busque atención médica, no quisiéramos que su salud empeore.<br>"
         		+ "¿Desea saber algo más?");
         respuestasFinEncuesta.add("Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?");
         agent.empezarConversacion(); //Se coloca el saludo inicial para poder ejecutarse en el environment
@@ -139,7 +139,16 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
             System.out.println();
 
 
-        } while(respuesta != "Nos vemos, viejo!");
+        } while(respuesta != "Adiós! Me alegra haber podido aclarar tus dudas!<br>"
+				+ "Me voy en 5...4...3...");
+        
+        try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        InterfaceUpdater.close();
 
         System.out.println();
 

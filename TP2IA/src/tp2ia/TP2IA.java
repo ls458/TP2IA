@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,8 @@ public class TP2IA extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("COVID-19 Chatbot: Atrapalos a todos!");
+        stage.getIcons().add(new Image (TP2IA.class.getResourceAsStream("resources/icon.png")));
         stage.show();
     }
 
@@ -32,6 +35,13 @@ public class TP2IA extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+    
+  //Indica que cuando se cierre la ventana se termine el hilo de búsqueda 
+    @Override
+    public void stop(){
+        System.out.println("Stage is closing");
+        ChatWindowController.closeSearchThread();
     }
     
 }

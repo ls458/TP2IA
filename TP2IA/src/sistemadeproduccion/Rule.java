@@ -119,4 +119,16 @@ public class Rule {
 		this.acciones = acciones;
 	}
 	
+	@Override
+	public String toString(){
+		StringBuffer sb = new StringBuffer();
+		sb.append('(');
+		for(Tema t : listaTemas) {
+			if(listaTemas.indexOf(t)!=0)
+				 sb.append(',');
+			sb.append(t.nombre);
+		}
+		sb.append(')');
+		return sb.toString();
+	}
 }

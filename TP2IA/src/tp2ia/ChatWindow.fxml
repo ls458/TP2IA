@@ -19,9 +19,9 @@
                   <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="128.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="164.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@resources/mirtha.png" />
+                        <Image url="@resources/Linguo.png" />
                      </image></ImageView>
                   <WebView fx:id="wvChat" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <HBox.margin>
@@ -32,7 +32,7 @@
             </HBox>
             <HBox prefHeight="30.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="tfInput" promptText="Pregunte aquí..." HBox.hgrow="ALWAYS">
+                  <TextField fx:id="tfInput" promptText="Pregunte aquí..." HBox.hgrow="ALWAYS" onAction="#agregarRespuestaUsuario">
                      <HBox.margin>
                         <Insets left="15.0" right="5.0" />
                      </HBox.margin>

@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 import chatbot.ChatbotEnvironment;
+import tp2ia.InterfaceUpdater;
 
 /**
  * Clase que implementa el criterio de prioridad.
@@ -17,15 +18,19 @@ public class Priority {
 		int mayorPrioridad = -1;
 		ArrayList<Rule> reglasAEjecutar = new ArrayList<Rule>();
 		for(Rule r : listaReglas) {
-			System.out.println("Especificidad de "+ r.getId() + " :" +r.getSpecificity());
+			System.out.println("Especificidad de "+ r.getId() + " :" +r.getPriority());
 			if(r.getPriority() > mayorPrioridad) {
 				mayorPrioridad = r.getPriority();
 				reglasAEjecutar.clear();
 				reglasAEjecutar.add(r);
 			}
-			else if(r.getSpecificity() == mayorPrioridad){
+			else if(r.getPriority() == mayorPrioridad){
 				reglasAEjecutar.add(r);
 			}
+		}
+		
+		for(Rule r : reglasAEjecutar) {
+			InterfaceUpdater.addToLog("Regla salida prioridad [id: " + r.id + "]: " + r.toString() + ", prioridad:" +r.getPriority());
 		}
 		
 		return reglasAEjecutar;

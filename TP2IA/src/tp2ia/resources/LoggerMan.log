@@ -1,0 +1,22 @@
+[28/06/2020 07:19:10]: TEXTO ENTRADA DEL USUARIO: Hola
+[28/06/2020 07:19:10]: Regla salida especificidad [id: 1000]: (Saludo), especificidad:1
+[28/06/2020 07:19:10]: RESPUESTA DEVUELTA POR EL AGENTE: Hola! Antes de empezar debemos hacerle una serie de preguntas.<br>¿Es usted paciente de riesgo?
+
+[28/06/2020 07:19:15]: TEXTO ENTRADA DEL USUARIO: NO
+[28/06/2020 07:19:15]: Regla salida especificidad [id: 1002]: (negación), especificidad:1
+[28/06/2020 07:19:15]: RESPUESTA DEVUELTA POR EL AGENTE: Perfecto. ¿Está usted en duda de ser portador de la enfermedad COVID-19?
+
+[28/06/2020 07:19:20]: TEXTO ENTRADA DEL USUARIO: chau
+[28/06/2020 07:19:20]: Regla salida especificidad [id: 1021]: (afirmación), especificidad:0
+[28/06/2020 07:19:20]: Regla salida especificidad [id: 1023]: (negación), especificidad:0
+[28/06/2020 07:19:20]: SIN COINCIDENCIA.
+[28/06/2020 07:19:20]: RESPUESTA DEVUELTA POR EL AGENTE: Ups! No cuento con información para entender esa pregunta, intente ser más específico por favor :(<br>Lo último que le había dicho era:<br>Perfecto. ¿Está usted en duda de ser portador de la enfermedad COVID-19?
+
+[28/06/2020 07:19:22]: TEXTO ENTRADA DEL USUARIO: no
+[28/06/2020 07:19:22]: Regla salida especificidad [id: 1023]: (negación), especificidad:1
+[28/06/2020 07:19:22]: RESPUESTA DEVUELTA POR EL AGENTE: Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?
+
+[28/06/2020 07:19:25]: TEXTO ENTRADA DEL USUARIO: chau
+[28/06/2020 07:19:25]: Regla salida especificidad [id: 2147483647]: (Despedida), especificidad:1
+[28/06/2020 07:19:25]: RESPUESTA DEVUELTA POR EL AGENTE: Adiós! Me alegra haber podido aclarar tus dudas!<br>Me voy en 5...4...3...
+

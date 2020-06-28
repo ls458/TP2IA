@@ -12,6 +12,7 @@ import sistemadeproduccion.RandomCriterio;
 import sistemadeproduccion.Rule;
 import sistemadeproduccion.Specificity;
 import sistemadeproduccion.Tema;
+import tp2ia.InterfaceUpdater;
 
 public class ChatbotAgent extends Agent{
 	
@@ -35,8 +36,6 @@ public class ChatbotAgent extends Agent{
 		
 		ArrayList<String> sinonimosT1 = new ArrayList<String>();
 		sinonimosT1.add("hola");
-		sinonimosT1.add("olakease");
-		sinonimosT1.add("kease");
 		Tema t1 = new Tema("Saludo", sinonimosT1);
 		
 		listaTemas.add(t1);
@@ -44,19 +43,25 @@ public class ChatbotAgent extends Agent{
 		ArrayList<String> sinonimosT2 = new ArrayList<String>();
 		sinonimosT2.add("chau");
 		sinonimosT2.add("adios");
-		sinonimosT2.add("chaucha");
+		sinonimosT2.add("saludos");
 		Tema t2 = new Tema("Despedida", sinonimosT2);
 		
 		listaTemas.add(t2);
 		
 		ArrayList<String> sinonimosTsi = new ArrayList<String>();
 		sinonimosTsi.add("si");
+		sinonimosTsi.add("afirmativo");
+		sinonimosTsi.add("correcto");
+		sinonimosTsi.add("verdadero");
 		Tema tsi = new Tema("afirmación", sinonimosTsi);
 		
 		listaTemas.add(tsi);
 		
 		ArrayList<String> sinonimosTno = new ArrayList<String>();
 		sinonimosTno.add("no");
+		sinonimosTno.add("negativo");
+		sinonimosTno.add("incorrecto");
+		sinonimosTno.add("falso");
 		Tema tno = new Tema("negación", sinonimosTno);
 		
 		listaTemas.add(tno);
@@ -72,17 +77,6 @@ public class ChatbotAgent extends Agent{
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-			
 		//ayuda -> ayuda ayuden ayudar
 		ArrayList<String> sinonimosT3 = new ArrayList<String>();
 		sinonimosT3.add("ayuda");
@@ -107,7 +101,7 @@ public class ChatbotAgent extends Agent{
 		
 		listaTemas.add(t5);
 		
-		//contagio -> contagio contagios contagiarse contagiado
+		//contagio -> contagio contagia contagios contagiarse contagiado contagiarme contagiarnos
 		ArrayList<String> sinonimosT6 = new ArrayList<String>();
 		sinonimosT6.add("contagio");
 		sinonimosT6.add("contagia");
@@ -244,6 +238,7 @@ public class ChatbotAgent extends Agent{
 		//ser -> ser es son seria
 		ArrayList<String> sinonimosT21 = new ArrayList<String>();
 		sinonimosT21.add("ser");
+		sinonimosT21.add("soy");
 		sinonimosT21.add("es");
 		sinonimosT21.add("son");
 		sinonimosT21.add("seria");
@@ -305,15 +300,89 @@ public class ChatbotAgent extends Agent{
 		
 		listaTemas.add(t27);
 		
-		//tener -> tener tiene tienen tenemos
+		//comercio -> comercio comerciante
 		ArrayList<String> sinonimosT29 = new ArrayList<String>();
 		sinonimosT29.add("comercio");
+		sinonimosT29.add("comercios");
 		sinonimosT29.add("comerciante");
+		sinonimosT29.add("comerciantes");
 		
-		Tema t29 = new Tema("tener", sinonimosT29);
+		Tema t29 = new Tema("comercio", sinonimosT29);
 		
 		listaTemas.add(t29);
 		
+		//forma -> forma formas metodo metodos
+		ArrayList<String> sinonimosT30 = new ArrayList<String>();
+		sinonimosT30.add("forma");
+		sinonimosT30.add("formas");
+		sinonimosT30.add("metodo");
+		sinonimosT30.add("metodos");
+		
+		Tema t30 = new Tema("comercio", sinonimosT30);
+		
+		listaTemas.add(t30);
+		
+		//personal -> personal empleado
+		ArrayList<String> sinonimosT31 = new ArrayList<String>();
+		sinonimosT31.add("personal");
+		sinonimosT31.add("empleado");
+				
+		Tema t31 = new Tema("personal", sinonimosT31);
+				
+		listaTemas.add(t31);
+		
+		//salud -> salud
+		ArrayList<String> sinonimosT32 = new ArrayList<String>();
+		sinonimosT32.add("salud");
+						
+		Tema t32 = new Tema("salud", sinonimosT32);
+						
+		listaTemas.add(t32);
+		
+		//trabajo -> trabajo trabajador
+		ArrayList<String> sinonimosT33 = new ArrayList<String>();
+		sinonimosT33.add("trabajo");
+		sinonimosT33.add("trabajador");
+						
+		Tema t33 = new Tema("trabajo", sinonimosT33);
+						
+		listaTemas.add(t33);
+		
+		//hospital -> hospital clinica
+		ArrayList<String> sinonimosT34 = new ArrayList<String>();
+		sinonimosT34.add("hospital");
+		sinonimosT34.add("clinica");
+								
+		Tema t34 = new Tema("hospital", sinonimosT34);
+								
+		listaTemas.add(t34);
+		
+		//medico -> medico medica enfermero enfermera
+		ArrayList<String> sinonimosT35 = new ArrayList<String>();
+		sinonimosT35.add("medico");
+		sinonimosT35.add("medicos");
+		sinonimosT35.add("medica");
+		sinonimosT35.add("medicas");
+		sinonimosT35.add("enfermero");
+		sinonimosT35.add("enfermeros");
+		sinonimosT35.add("enfermera");
+		sinonimosT35.add("enfermeras");
+										
+		Tema t35 = new Tema("medico", sinonimosT35);
+										
+		listaTemas.add(t35);
+		
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+//Regla terminación
+////////////////////R
+		ArrayList<Tema> temasRterminacion = new ArrayList<Tema>();
+		Rule reglaterminacion = new Rule();
+		reglaterminacion.setId(Integer.MAX_VALUE);
+		reglaterminacion.setListaTemas(temasRterminacion);
+		reglaterminacion.Respuesta = "Adiós! Me alegra haber podido aclarar tus dudas!<br>"
+				+ "Me voy en 5...4...3...";
+		reglasGenerales.add(reglaterminacion);
+		temasRterminacion.add(t2);//chau
 		
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 //Reglas generales
@@ -351,7 +420,7 @@ public class ChatbotAgent extends Agent{
 				"agua y jabón o un desinfectante de manos a " + 
 				"base de alcohol.";
 		reglasGenerales.add(regla2_1);
-		temasR2_1.add(t7);//que
+//		temasR2_1.add(t7);//que
 		temasR2_1.add(t19);//recomendacion
 		temasR2_1.add(tno);//no
 		temasR2_1.add(t6);//contagio
@@ -364,7 +433,7 @@ public class ChatbotAgent extends Agent{
 		regla2_2.Respuesta = "Manténgase a una distancia segura de cualquier "
 				+ "persona que tosa o estornude. No se toque los ojos, la nariz o la boca.";
 		reglasGenerales.add(regla2_2);
-		temasR2_2.add(t7);//que
+//		temasR2_2.add(t7);//que
 		temasR2_2.add(t19);//recomendacion
 		temasR2_2.add(tno);//no
 		temasR2_2.add(t6);//contagio
@@ -377,7 +446,7 @@ public class ChatbotAgent extends Agent{
 		regla2_3.Respuesta = "Cuando tosa o estornude, cúbrase la nariz y "
 				+ "la boca con el codo flexionado o con un pañuelo.";
 		reglasGenerales.add(regla2_3);
-		temasR2_3.add(t7);//que
+//		temasR2_3.add(t7);//que
 		temasR2_3.add(t19);//recomendacion
 		temasR2_3.add(tno);//no
 		temasR2_3.add(t6);//contagio
@@ -389,7 +458,7 @@ public class ChatbotAgent extends Agent{
 		regla2_4.setListaTemas(temasR2_4);
 		regla2_4.Respuesta = "Quédese en casa. En caso de salir use barbijo.";
 		reglasGenerales.add(regla2_4);
-		temasR2_4.add(t7);//que
+//		temasR2_4.add(t7);//que
 		temasR2_4.add(t19);//recomendacion
 		temasR2_4.add(tno);//no
 		temasR2_4.add(t6);//contagio
@@ -403,7 +472,7 @@ public class ChatbotAgent extends Agent{
 				+ "perjudicar a personas más vulnerables que usted.";
 		regla2_5.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasNoRiesgoSiInfectado.add(regla2_5);
-		temasR2_5.add(t7);//que
+//		temasR2_5.add(t7);//que
 		temasR2_5.add(t19);//recomendacion
 		temasR2_5.add(tno);//no
 		temasR2_5.add(t6);//contagio
@@ -413,11 +482,11 @@ public class ChatbotAgent extends Agent{
 		Rule regla2_6 = new Rule();
 		regla2_6.setId(2_6);
 		regla2_6.setListaTemas(temasR2_6);
-		regla2_6.Respuesta = "Le pedimos que si no se siente bien, no dude en pedir ayuda médica, "
+		regla2_6.Respuesta = "Trate de no salir de su casa. Pero le pedimos que si no se siente bien, no dude en pedir ayuda médica, "
 				+ "su salud es muy importante para nosotros, y su caso tendrá prioridad en los centros de salud.";
 		regla2_6.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasSiRiesgoSiInfectado.add(regla2_6);
-		temasR2_6.add(t7);//que
+//		temasR2_6.add(t7);//que
 		temasR2_6.add(t19);//recomendacion
 		temasR2_6.add(tno);//no
 		temasR2_6.add(t6);//contagio
@@ -431,7 +500,7 @@ public class ChatbotAgent extends Agent{
 				+ "lo primordial.";
 		regla2_7.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasSiRiesgoNoInfectado.add(regla2_7);
-		temasR2_7.add(t7);//que
+//		temasR2_7.add(t7);//que
 		temasR2_7.add(t19);//recomendacion
 		temasR2_7.add(tno);//no
 		temasR2_7.add(t6);//contagio
@@ -446,7 +515,7 @@ public class ChatbotAgent extends Agent{
 				+ "de su casa.";
 		regla2_8.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasNoRiesgoNoInfectado.add(regla2_8);
-		temasR2_8.add(t7);//que
+//		temasR2_8.add(t7);//que
 		temasR2_8.add(t19);//recomendacion
 		temasR2_8.add(tno);//no
 		temasR2_8.add(t6);//contagio
@@ -464,7 +533,7 @@ public class ChatbotAgent extends Agent{
 		temasR3_1.add(t7);//que
 		temasR3_1.add(t22);//sintoma
 		temasR3_1.add(t24);//tener
-		temasR3_1.add(t8);//coronavirus
+//		temasR3_1.add(t8);//coronavirus
 //		temasR3_1.add(t9);//cual
 //		temasR3_1.add(t21);//ser
 		
@@ -493,7 +562,7 @@ public class ChatbotAgent extends Agent{
 		temasR3_3.add(t7);//que
 		temasR3_3.add(t22);//sintoma
 		temasR3_3.add(t24);//tener
-		temasR3_3.add(t8);//coronavirus
+//		temasR3_3.add(t8);//coronavirus
 //		temasR3_3.add(t9);//cual
 //		temasR3_3.add(t21);//son
 		
@@ -510,6 +579,62 @@ public class ChatbotAgent extends Agent{
 		temasR3_4.add(t22);//sintoma
 		
 ////////////////////R
+		ArrayList<Tema> temasR3_5 = new ArrayList<Tema>();
+		Rule regla3_5 = new Rule();
+		regla3_5.setId(3_5);
+		regla3_5.setListaTemas(temasR3_5);
+		regla3_5.Respuesta = "Los síntomas más comunes de la enfermedad son el cansancio, "
+			+ "tos seca y fiebre. Otros síntomas menos comunes pueden ser molestias y dolores "
+			+ "en el cuerpo, dolor de garganta, diarrea, conjuntivitis, dolor de cabeza y "
+			+ "pérdida del sentido del olfato o del gusto.";
+		reglasGenerales.add(regla3_5);
+		temasR3_5.add(t7);//que
+		temasR3_5.add(t22);//sintoma
+		temasR3_5.add(t24);//tener
+		temasR3_5.add(t8);//coronavirus
+
+////////////////////R
+		ArrayList<Tema> temasR3_6 = new ArrayList<Tema>();
+		Rule regla3_6 = new Rule();
+		regla3_6.setId(3_6);
+		regla3_6.setListaTemas(temasR3_6);
+		regla3_6.Respuesta = "Los síntomas más comunes de la enfermedad son el cansancio, "
+		+ "tos seca y fiebre. Otros síntomas menos comunes pueden ser molestias y dolores "
+		+ "en el cuerpo, dolor de garganta, diarrea, conjuntivitis, dolor de cabeza y "
+		+ "pérdida del sentido del olfato o del gusto.";
+		reglasGenerales.add(regla3_6);
+		temasR3_6.add(t9);//cual
+		temasR3_6.add(t21);//ser
+		temasR3_6.add(t22);//sintoma
+		temasR3_6.add(t8);//coronavirus
+	
+////////////////////R
+		ArrayList<Tema> temasR3_7 = new ArrayList<Tema>();
+		Rule regla3_7 = new Rule();
+		regla3_7.setId(3_7);
+		regla3_7.setListaTemas(temasR3_7);
+		regla3_7.Respuesta = "Los síntomas son muy variados. Generalmente se caracteriza por "
+			+ "fiebre muy alta y problemas o molestias al respirar.";
+		reglasGenerales.add(regla3_7);
+		temasR3_7.add(t7);//que
+		temasR3_7.add(t22);//sintoma
+		temasR3_7.add(t24);//tener
+		temasR3_7.add(t8);//coronavirus
+
+////////////////////R
+		ArrayList<Tema> temasR3_8 = new ArrayList<Tema>();
+		Rule regla3_8 = new Rule();
+		regla3_8.setId(3_8);
+		regla3_8.setListaTemas(temasR3_8);
+		regla3_8.Respuesta = "Los síntomas son muy variados. Generalmente se caracteriza por "
+		+ "fiebre muy alta y problemas o molestias al respirar.";
+		reglasGenerales.add(regla3_8);
+		temasR3_8.add(t9);//cual
+		temasR3_8.add(t21);//ser
+		temasR3_8.add(t22);//sintoma
+		temasR3_8.add(t8);//coronavirus
+		
+////////////////////R
 		ArrayList<Tema> temasR4_1 = new ArrayList<Tema>();
 		Rule regla4_1 = new Rule();
 		regla4_1.setId(4_1);
@@ -521,8 +646,6 @@ public class ChatbotAgent extends Agent{
 		temasR4_1.add(t7);//como
 		temasR4_1.add(t6);//contagia
 		temasR4_1.add(t8);//coronavirus
-//		temasR4_1.add(t9);//cual (cuál es forma de contagio)
-//		temasR4_1.add(t21);//es
 		
 ////////////////////R
 		ArrayList<Tema> temasR4_2 = new ArrayList<Tema>();
@@ -534,7 +657,7 @@ public class ChatbotAgent extends Agent{
 			+ "estornuda o habla, por contacto con manos, superficies u objetos contaminados.";
 		reglasGenerales.add(regla4_2);
 		temasR4_2.add(t9);//cual (cuál es forma de contagio)
-		temasR4_2.add(t21);//es
+		temasR4_2.add(t30);//forma
 		temasR4_2.add(t6);//contagia
 		
 ////////////////////R
@@ -548,8 +671,6 @@ public class ChatbotAgent extends Agent{
 		temasR4_3.add(t7);//como
 		temasR4_3.add(t6);//contagia
 		temasR4_3.add(t8);//coronavirus
-//		temasR4_2.add(t9);//cual (cuál es forma de contagio)
-//		temasR4_2.add(t21);//es
 		
 ////////////////////R
 		ArrayList<Tema> temasR4_4 = new ArrayList<Tema>();
@@ -561,9 +682,8 @@ public class ChatbotAgent extends Agent{
 		+ "estornuda o habla, por contacto con manos, superficies u objetos contaminados.";
 		reglasGenerales.add(regla4_4);
 		temasR4_4.add(t9);//cual (cuál es forma de contagio)
-		temasR4_4.add(t21);//es
+		temasR4_4.add(t30);//forma
 		temasR4_4.add(t6);//contagia
-
 		
 ////////////////////R
 		ArrayList<Tema> temasR5_1 = new ArrayList<Tema>();
@@ -578,7 +698,6 @@ public class ChatbotAgent extends Agent{
 		temasR5_1.add(t21);//es
 		temasR5_1.add(t23);//tasa
 		temasR5_1.add(t6);//contagio
-//		temasR5_1.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR5_2 = new ArrayList<Tema>();
@@ -592,7 +711,6 @@ public class ChatbotAgent extends Agent{
 		temasR5_2.add(t21);//es
 		temasR5_2.add(t23);//tasa
 		temasR5_2.add(t6);//contagio
-//		temasR5_2.add(t8);//coronavirus
 		
 ////////////////////R
 		ArrayList<Tema> temasR5_3 = new ArrayList<Tema>();
@@ -634,8 +752,6 @@ public class ChatbotAgent extends Agent{
 		temasR6_1.add(t9);//cual
 		temasR6_1.add(t21);//es
 		temasR6_1.add(t27);//duracion
-//		temasR6_1.add(t10);//cuanto
-//		temasR6_1.add(t8);//enfermedad
 		
 ////////////////////R
 		ArrayList<Tema> temasR6_2 = new ArrayList<Tema>();
@@ -661,7 +777,6 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla6_3);
 		temasR6_3.add(t10);//cuanto
 		temasR6_3.add(t27);//duracion
-//		temasR6_3.add(t8);//enfermedad
 		
 ////////////////////R
 		ArrayList<Tema> temasR6_4 = new ArrayList<Tema>();
@@ -687,7 +802,6 @@ public class ChatbotAgent extends Agent{
 		temasR7_1.add(t9);//cual
 		temasR7_1.add(t21);//es
 		temasR7_1.add(t20);//riesgo
-		//temasR7_1.add(t8);//coronavirus
 		
 ////////////////////R  (particular No riesgo No infectado)
 		ArrayList<Tema> temasR7_2 = new ArrayList<Tema>();
@@ -714,7 +828,6 @@ public class ChatbotAgent extends Agent{
 		temasR7_3.add(t9);//cual
 		temasR7_3.add(t21);//es
 		temasR7_3.add(t20);//riesgo
-		//temasR7_3.add(t8);//coronavirus
 		
 ////////////////////R  (particular Sí riesgo No infectado)
 		ArrayList<Tema> temasR7_4 = new ArrayList<Tema>();
@@ -742,14 +855,13 @@ public class ChatbotAgent extends Agent{
 		temasR7_5.add(t9);//cual
 		temasR7_5.add(t21);//es
 		temasR7_5.add(t20);//riesgo
-		//temasR7_5.add(t8);//coronavirus
 
 ////////////////////R  (particular No riesgo Sí infectado)
 		ArrayList<Tema> temasR7_6 = new ArrayList<Tema>();
 		Rule regla7_6 = new Rule();
 		regla7_6.setId(7_6);
 		regla7_6.setListaTemas(temasR7_6);
-		regla7_6.Respuesta = "Personas jóvenes y saludables no presentan riesgos mayores. Sin embargo, el contagio \"\r\n" + 
+		regla7_6.Respuesta = "Personas jóvenes y saludables no presentan riesgos mayores. Sin embargo, el contagio \"\r<br>" + 
 				"		+ \"es muy peligroso para personas de riesgo, por lo que le pedimos extremo cuidado y aislamiento social.";
 		regla7_6.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasNoRiesgoSiInfectado.add(regla7_6);
@@ -770,7 +882,6 @@ public class ChatbotAgent extends Agent{
 		temasR7_7.add(t9);//cual
 		temasR7_7.add(t21);//es
 		temasR7_7.add(t20);//riesgo
-		//temasR7_7.add(t8);//coronavirus
 
 ////////////////////R  (particular Sí riesgo Sí infectado)
 		ArrayList<Tema> temasR7_8 = new ArrayList<Tema>();
@@ -847,9 +958,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla9_1);
 		temasR9_1.add(t16);//numero
 		temasR9_1.add(t4);//casos
-//		temasR9_1.add(t12);//infectados
 		temasR9_1.add(t5);//ciudad
-//		temasR9_1.add(t8);//coronavirus
 		
 ////////////////////R
 		ArrayList<Tema> temasR9_2 = new ArrayList<Tema>();
@@ -859,10 +968,8 @@ public class ChatbotAgent extends Agent{
 		regla9_2.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
 		reglasGenerales.add(regla9_2);
 		temasR9_2.add(t16);//numero
-//		temasR9_2.add(t4);//casos
 		temasR9_2.add(t12);//infectados
 		temasR9_2.add(t5);//ciudad
-//		temasR9_2.add(t8);//coronavirus
 		
 ////////////////////R
 		ArrayList<Tema> temasR9_3 = new ArrayList<Tema>();
@@ -873,9 +980,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla9_3);
 		temasR9_3.add(t16);//numero
 		temasR9_3.add(t4);//casos
-		//temasR9_3.add(t12);//infectados
-		temasR9_3.add(t5);//ciudad
 		temasR9_3.add(t8);//coronavirus
+		temasR9_3.add(t5);//ciudad
 
 ////////////////////R
 		ArrayList<Tema> temasR9_4 = new ArrayList<Tema>();
@@ -885,10 +991,9 @@ public class ChatbotAgent extends Agent{
 		regla9_4.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
 		reglasGenerales.add(regla9_4);
 		temasR9_4.add(t16);//numero
-		//temasR9_4.add(t4);//casos
 		temasR9_4.add(t12);//infectados
-		temasR9_4.add(t5);//ciudad
 		temasR9_4.add(t8);//coronavirus
+		temasR9_4.add(t5);//ciudad
 		
 ////////////////////R
 		ArrayList<Tema> temasR9_5 = new ArrayList<Tema>();
@@ -900,9 +1005,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla9_5);
 		temasR9_5.add(t16);//numero
 		temasR9_5.add(t4);//casos
-		//temasR9_5.add(t12);//infectados
 		temasR9_5.add(t5);//ciudad
-		//temasR9_5.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR9_6 = new ArrayList<Tema>();
@@ -913,10 +1016,8 @@ public class ChatbotAgent extends Agent{
 				+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla9_6);
 		temasR9_6.add(t16);//numero
-		//temasR9_6.add(t4);//casos
 		temasR9_6.add(t12);//infectados
 		temasR9_6.add(t5);//ciudad
-		//temasR9_6.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR9_7 = new ArrayList<Tema>();
@@ -928,9 +1029,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla9_7);
 		temasR9_7.add(t16);//numero
 		temasR9_7.add(t4);//casos
-		//temasR9_7.add(t12);//infectados
-		temasR9_7.add(t5);//ciudad
 		temasR9_7.add(t8);//coronavirus
+		temasR9_7.add(t5);//ciudad
 
 ////////////////////R
 		ArrayList<Tema> temasR9_8 = new ArrayList<Tema>();
@@ -941,10 +1041,9 @@ public class ChatbotAgent extends Agent{
 				+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla9_8);
 		temasR9_8.add(t16);//numero
-		//temasR9_8.add(t4);//casos
 		temasR9_8.add(t12);//infectados
-		temasR9_8.add(t5);//ciudad
 		temasR9_8.add(t8);//coronavirus
+		temasR9_8.add(t5);//ciudad
 		
 ////////////////////R
 		ArrayList<Tema> temasR10_1 = new ArrayList<Tema>();
@@ -955,9 +1054,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla10_1);
 		temasR10_1.add(t16);//numero
 		temasR10_1.add(t4);//casos
-		//temasR10_1.add(t12);//infectados
 		temasR10_1.add(t18);//provincia
-		//temasR10_1.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR10_2 = new ArrayList<Tema>();
@@ -967,10 +1064,8 @@ public class ChatbotAgent extends Agent{
 		regla10_2.Respuesta = "La cantidad de infectados en la provincia es de ____________";
 		reglasGenerales.add(regla10_2);
 		temasR10_2.add(t16);//numero
-		//temasR10_2.add(t4);//casos
 		temasR10_2.add(t12);//infectados
 		temasR10_2.add(t18);//provincia
-		//temasR10_2.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR10_3 = new ArrayList<Tema>();
@@ -981,9 +1076,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla10_3);
 		temasR10_3.add(t16);//numero
 		temasR10_3.add(t4);//casos
-		//temasR10_3.add(t12);//infectados
-		temasR10_3.add(t18);//provincia
 		temasR10_3.add(t8);//coronavirus
+		temasR10_3.add(t18);//provincia
 
 ////////////////////R
 		ArrayList<Tema> temasR10_4 = new ArrayList<Tema>();
@@ -993,10 +1087,9 @@ public class ChatbotAgent extends Agent{
 		regla10_4.Respuesta = "La cantidad de infectados en la provincia es de ____________";
 		reglasGenerales.add(regla10_4);
 		temasR10_4.add(t16);//numero
-		//temasR10_4.add(t4);//casos
 		temasR10_4.add(t12);//infectados
-		temasR10_4.add(t18);//provincia
 		temasR10_4.add(t8);//coronavirus
+		temasR10_4.add(t18);//provincia
 
 ////////////////////R
 		ArrayList<Tema> temasR10_5 = new ArrayList<Tema>();
@@ -1008,9 +1101,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla10_5);
 		temasR10_5.add(t16);//numero
 		temasR10_5.add(t4);//casos
-		//temasR10_5.add(t12);//infectados
 		temasR10_5.add(t18);//provincia
-		//temasR10_5.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR10_6 = new ArrayList<Tema>();
@@ -1021,10 +1112,8 @@ public class ChatbotAgent extends Agent{
 			+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla10_6);
 		temasR10_6.add(t16);//numero
-		//temasR10_6.add(t4);//casos
 		temasR10_6.add(t12);//infectados
 		temasR10_6.add(t18);//provincia
-		//temasR10_6.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR10_7 = new ArrayList<Tema>();
@@ -1036,9 +1125,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla10_7);
 		temasR10_7.add(t16);//numero
 		temasR10_7.add(t4);//casos
-		//temasR10_7.add(t12);//infectados
-		temasR10_7.add(t18);//provincia
 		temasR10_7.add(t8);//coronavirus
+		temasR10_7.add(t18);//provincia
 
 ////////////////////R
 		ArrayList<Tema> temasR10_8 = new ArrayList<Tema>();
@@ -1049,10 +1137,9 @@ public class ChatbotAgent extends Agent{
 			+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla10_8);
 		temasR10_8.add(t16);//numero
-		//temasR10_8.add(t4);//casos
 		temasR10_8.add(t12);//infectados
-		temasR10_8.add(t18);//provincia
 		temasR10_8.add(t8);//coronavirus
+		temasR10_8.add(t18);//provincia
 		
 ////////////////////R
 		ArrayList<Tema> temasR11_1 = new ArrayList<Tema>();
@@ -1063,9 +1150,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla11_1);
 		temasR11_1.add(t16);//numero
 		temasR11_1.add(t4);//casos
-		//temasR11_1.add(t12);//infectados
 		temasR11_1.add(t17);//país
-		//temasR11_1.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR11_2 = new ArrayList<Tema>();
@@ -1075,10 +1160,8 @@ public class ChatbotAgent extends Agent{
 		regla11_2.Respuesta = "La cantidad de infectados en el país es de ____________";
 		reglasGenerales.add(regla11_2);
 		temasR11_2.add(t16);//numero
-		//temasR11_2.add(t4);//casos
 		temasR11_2.add(t12);//infectados
 		temasR11_2.add(t17);//país
-		//temasR11_2.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR11_3 = new ArrayList<Tema>();
@@ -1089,9 +1172,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla11_3);
 		temasR11_3.add(t16);//numero
 		temasR11_3.add(t4);//casos
-		//temasR11_3.add(t12);//infectados
-		temasR11_3.add(t17);//país
 		temasR11_3.add(t8);//coronavirus
+		temasR11_3.add(t17);//país
 
 ////////////////////R
 		ArrayList<Tema> temasR11_4 = new ArrayList<Tema>();
@@ -1101,10 +1183,9 @@ public class ChatbotAgent extends Agent{
 		regla11_4.Respuesta = "La cantidad de infectados en el país es de ____________";
 		reglasGenerales.add(regla11_4);
 		temasR11_4.add(t16);//numero
-		//temasR11_4.add(t4);//casos
 		temasR11_4.add(t12);//infectados
-		temasR11_4.add(t17);//país
 		temasR11_4.add(t8);//coronavirus
+		temasR11_4.add(t17);//país
 
 ////////////////////R
 		ArrayList<Tema> temasR11_5 = new ArrayList<Tema>();
@@ -1116,9 +1197,7 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla11_5);
 		temasR11_5.add(t16);//numero
 		temasR11_5.add(t4);//casos
-		//temasR11_5.add(t12);//infectados
 		temasR11_5.add(t17);//país
-		//temasR11_5.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR11_6 = new ArrayList<Tema>();
@@ -1129,10 +1208,8 @@ public class ChatbotAgent extends Agent{
 		+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla11_6);
 		temasR11_6.add(t16);//numero
-		//temasR11_6.add(t4);//casos
 		temasR11_6.add(t12);//infectados
 		temasR11_6.add(t17);//país
-		//temasR11_6.add(t8);//coronavirus
 
 ////////////////////R
 		ArrayList<Tema> temasR11_7 = new ArrayList<Tema>();
@@ -1144,9 +1221,8 @@ public class ChatbotAgent extends Agent{
 		reglasGenerales.add(regla11_7);
 		temasR11_7.add(t16);//numero
 		temasR11_7.add(t4);//casos
-		//temasR11_7.add(t12);//infectados
-		temasR11_7.add(t17);//país
 		temasR11_7.add(t8);//coronavirus
+		temasR11_7.add(t17);//país
 
 ////////////////////R
 		ArrayList<Tema> temasR11_8 = new ArrayList<Tema>();
@@ -1157,10 +1233,9 @@ public class ChatbotAgent extends Agent{
 		+ "____________ fueron en las últimas 24 horas.";
 		reglasGenerales.add(regla11_8);
 		temasR11_8.add(t16);//numero
-		//temasR11_8.add(t4);//casos
 		temasR11_8.add(t12);//infectados
-		temasR11_8.add(t17);//país
 		temasR11_8.add(t8);//coronavirus
+		temasR11_8.add(t17);//país
 		
 ////////////////////R
 		ArrayList<Tema> temasR12_1 = new ArrayList<Tema>();
@@ -1171,12 +1246,9 @@ public class ChatbotAgent extends Agent{
 				+ "un 30% de los casos del país.";
 		reglasGenerales.add(regla12_1);
 		temasR12_1.add(t9);//cual
-//		temasR12_1.add(t11);//donde
 		temasR12_1.add(t25);//zona
 		temasR12_1.add(t13);//mayor
 		temasR12_1.add(t20);//riesgo
-//		temasR12_1.add(t16);//numero
-//		temasR12_1.add(t4);//caso
 		
 ////////////////////R
 		ArrayList<Tema> temasR12_2 = new ArrayList<Tema>();
@@ -1188,12 +1260,9 @@ public class ChatbotAgent extends Agent{
 				+ "con 60, Pilar con 51 y San Isidro con 45.";
 		reglasGenerales.add(regla12_2);
 		temasR12_2.add(t9);//cual
-//		temasR12_2.add(t11);//donde
 		temasR12_2.add(t25);//zona
 		temasR12_2.add(t13);//mayor
 		temasR12_2.add(t20);//riesgo
-//		temasR12_2.add(t16);//numero
-//		temasR12_2.add(t4);//caso
 		
 ////////////////////R
 		ArrayList<Tema> temasR12_3 = new ArrayList<Tema>();
@@ -1204,10 +1273,8 @@ public class ChatbotAgent extends Agent{
 			+ "un 30% de los casos del país.";
 		reglasGenerales.add(regla12_3);
 		temasR12_3.add(t9);//cual
-		//temasR12_3.add(t11);//donde
 		temasR12_3.add(t25);//zona
 		temasR12_3.add(t13);//mayor
-		//temasR12_3.add(t20);//riesgo
 		temasR12_3.add(t16);//numero
 		temasR12_3.add(t4);//caso
 
@@ -1221,10 +1288,8 @@ public class ChatbotAgent extends Agent{
 			+ "con 60, Pilar con 51 y San Isidro con 45.";
 		reglasGenerales.add(regla12_4);
 		temasR12_4.add(t9);//cual
-		//temasR12_4.add(t11);//donde
 		temasR12_4.add(t25);//zona
 		temasR12_4.add(t13);//mayor
-		//temasR12_4.add(t20);//riesgo
 		temasR12_4.add(t16);//numero
 		temasR12_4.add(t4);//caso
 
@@ -1236,13 +1301,9 @@ public class ChatbotAgent extends Agent{
 		regla12_5.Respuesta = "La mayor concentración de casos está en la provincia de Buenos Aires, donde hay "
 		+ "un 30% de los casos del país.";
 		reglasGenerales.add(regla12_5);
-		//temasR12_5.add(t9);//cual
 		temasR12_5.add(t11);//donde
-		//temasR12_5.add(t25);//zona
 		temasR12_5.add(t13);//mayor
 		temasR12_5.add(t20);//riesgo
-		//temasR12_5.add(t16);//numero
-		//temasR12_5.add(t4);//caso
 
 ////////////////////R
 		ArrayList<Tema> temasR12_6 = new ArrayList<Tema>();
@@ -1253,11 +1314,8 @@ public class ChatbotAgent extends Agent{
 		+ "con más contagios confirmados oficialmente es San Martín con 67 casos, seguido de Vicente López "
 		+ "con 60, Pilar con 51 y San Isidro con 45.";
 		reglasGenerales.add(regla12_6);
-		//temasR12_6.add(t9);//cual
 		temasR12_6.add(t11);//donde
-		//temasR12_6.add(t25);//zona
 		temasR12_6.add(t13);//mayor
-		//temasR12_6.add(t20);//riesgo
 		temasR12_6.add(t16);//numero
 		temasR12_6.add(t4);//caso
 		
@@ -1339,13 +1397,13 @@ public class ChatbotAgent extends Agent{
 		Rule regla14_1 = new Rule();
 		regla14_1.setId(14_1);
 		regla14_1.setListaTemas(temasR14_1);
-		regla14_1.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:\n"
-				+ "1- Restringir la cantidad de personas dentro del comercio.\n" + 
-				"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.\n" + 
-				"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.\n" +  
-				"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.\n" + 
-				"5- Los comercios que disponen de delivery fomentar esta modalidad.\n" +  
-				"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.\n" + 
+		regla14_1.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:<br>"
+				+ "1- Restringir la cantidad de personas dentro del comercio.<br>" + 
+				"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.<br>" + 
+				"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.<br>" +  
+				"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.<br>" + 
+				"5- Los comercios que disponen de delivery fomentar esta modalidad.<br>" +  
+				"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.<br>" + 
 				"7- Desinfectar lugares y equipos de trabajo reutilizables.";
 		regla14_1.setReglasImplicadas(reglasComerciantes); //habilita las preguntas de los comerciantes
 		reglasGenerales.add(regla14_1);
@@ -1364,13 +1422,13 @@ public class ChatbotAgent extends Agent{
 		Rule regla14_2 = new Rule();
 		regla14_2.setId(14_2);
 		regla14_2.setListaTemas(temasR14_2);
-		regla14_2.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:\n"
-				+ "1- Restringir la cantidad de personas dentro del comercio.\n" + 
-				"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.\n" + 
-				"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.\n" +  
-				"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.\n" + 
-				"5- Los comercios que disponen de delivery fomentar esta modalidad.\n" +  
-				"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.\n" + 
+		regla14_2.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:<br>"
+				+ "1- Restringir la cantidad de personas dentro del comercio.<br>" + 
+				"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.<br>" + 
+				"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.<br>" +  
+				"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.<br>" + 
+				"5- Los comercios que disponen de delivery fomentar esta modalidad.<br>" +  
+				"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.<br>" + 
 				"7- Desinfectar lugares y equipos de trabajo reutilizables.";
 		regla14_2.setReglasImplicadas(reglasComerciantes); //habilita las preguntas de los comerciantes
 		reglasGenerales.add(regla14_2);
@@ -1384,13 +1442,13 @@ public class ChatbotAgent extends Agent{
 		Rule regla14_3 = new Rule();
 		regla14_3.setId(14_3);
 		regla14_3.setListaTemas(temasR14_3);
-		regla14_3.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:\n"
-			+ "1- Restringir la cantidad de personas dentro del comercio.\n" + 
-			"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.\n" + 
-			"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.\n" +  
-			"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.\n" + 
-			"5- Los comercios que disponen de delivery fomentar esta modalidad.\n" +  
-			"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.\n" + 
+		regla14_3.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:<br>"
+			+ "1- Restringir la cantidad de personas dentro del comercio.<br>" + 
+			"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.<br>" + 
+			"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.<br>" +  
+			"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.<br>" + 
+			"5- Los comercios que disponen de delivery fomentar esta modalidad.<br>" +  
+			"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.<br>" + 
 			"7- Desinfectar lugares y equipos de trabajo reutilizables.";
 		regla14_3.setReglasImplicadas(reglasComerciantes); //habilita las preguntas de los comerciantes
 		reglasGenerales.add(regla14_3);
@@ -1405,13 +1463,13 @@ public class ChatbotAgent extends Agent{
 		Rule regla14_4 = new Rule();
 		regla14_4.setId(14_4);
 		regla14_4.setListaTemas(temasR14_4);
-		regla14_4.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:\n"
-			+ "1- Restringir la cantidad de personas dentro del comercio.\n" + 
-			"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.\n" + 
-			"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.\n" +  
-			"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.\n" + 
-			"5- Los comercios que disponen de delivery fomentar esta modalidad.\n" +  
-			"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.\n" + 
+		regla14_4.Respuesta = "Si su comercio se encuentra habilitado para la atención, se le recomienda:<br>"
+			+ "1- Restringir la cantidad de personas dentro del comercio.<br>" + 
+			"2- Disponer de alcohol en gel u otra solución hidroalcohólica desinfectante al alcance de los clientes y de los trabajadores. Se aconseja que el personal limpie sus manos con alcohol en gel cada vez que intercambie algún objeto con los consumidores.<br>" + 
+			"3- Se recomienda ubicar los mostradores con alcohol en gel en la puerta del comercio para evitar la circulación.<br>" +  
+			"4- Se aconseja que los pedidos puedan realizarse por teléfono o por internet. Procurar la habilitación de medios de ventas a través de internet y las redes sociales, entre otros.<br>" + 
+			"5- Los comercios que disponen de delivery fomentar esta modalidad.<br>" +  
+			"6- Evitar el contacto cercano y mantener una distancia de entre uno y dos metros entre las personas dentro de los locales comerciales. Además, se insta a evitar abrazos, besos o estrechar las manos entre los empleados y los clientes.<br>" + 
 			"7- Desinfectar lugares y equipos de trabajo reutilizables.";
 		regla14_4.setReglasImplicadas(reglasComerciantes); //habilita las preguntas de los comerciantes
 		reglasGenerales.add(regla14_4);
@@ -1425,10 +1483,256 @@ public class ChatbotAgent extends Agent{
 		
 		
 		
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+//PERSONAL DE LA SALUD
+		ArrayList<Rule> reglasPersonalSalud = new ArrayList<Rule>();
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_1 = new ArrayList<Tema>();
+		Rule regla15_1 = new Rule();
+		regla15_1.setId(15_1);
+		regla15_1.setListaTemas(temasR15_1);
+		regla15_1.Respuesta = "Realizar higiene de manos frecuente durante las tareas asistenciales, y en " + 
+				"momentos de tareas no asistenciales.";
+		reglasPersonalSalud.add(regla15_1);
+		temasR15_1.add(t19);//recomendación
+		temasR15_1.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_2 = new ArrayList<Tema>();
+		Rule regla15_2 = new Rule();
+		regla15_2.setId(15_2);
+		regla15_2.setListaTemas(temasR15_2);
+		regla15_2.Respuesta = "Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.";
+		reglasPersonalSalud.add(regla15_2);
+		temasR15_2.add(t19);//recomendación
+		temasR15_2.add(t33);//trabajo
+		
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_3 = new ArrayList<Tema>();
+		Rule regla15_3 = new Rule();
+		regla15_3.setId(15_3);
+		regla15_3.setListaTemas(temasR15_3);
+		regla15_3.Respuesta = "No llevarse las manos a la cara.";
+		reglasPersonalSalud.add(regla15_3);
+		temasR15_3.add(t19);//recomendación
+		temasR15_3.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_4 = new ArrayList<Tema>();
+		Rule regla15_4 = new Rule();
+		regla15_4.setId(15_4);
+		regla15_4.setListaTemas(temasR15_4);
+		regla15_4.Respuesta = "Ventilar bien los ambientes del lugar de trabajo.";
+		reglasPersonalSalud.add(regla15_4);
+		temasR15_4.add(t19);//recomendación
+		temasR15_4.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_5 = new ArrayList<Tema>();
+		Rule regla15_5 = new Rule();
+		regla15_5.setId(15_5);
+		regla15_5.setListaTemas(temasR15_5);
+		regla15_5.Respuesta = "Desinfectar los objetos que se usan con frecuencia.";
+		reglasPersonalSalud.add(regla15_5);
+		temasR15_5.add(t19);//recomendación
+		temasR15_5.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_6 = new ArrayList<Tema>();
+		Rule regla15_6 = new Rule();
+		regla15_6.setId(15_6);
+		regla15_6.setListaTemas(temasR15_6);
+		regla15_6.Respuesta = "No compartir mate, vajilla o utensilios en el trabajo.";
+		reglasPersonalSalud.add(regla15_6);
+		temasR15_6.add(t19);//recomendación
+		temasR15_6.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_7 = new ArrayList<Tema>();
+		Rule regla15_7 = new Rule();
+		regla15_7.setId(15_7);
+		regla15_7.setListaTemas(temasR15_7);
+		regla15_7.Respuesta = "Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo, <br>" + 
+				"guardapolvo), y ésta debe quedar en el ámbito laboral.";
+		reglasPersonalSalud.add(regla15_7);
+		temasR15_7.add(t19);//recomendación
+		temasR15_7.add(t33);//trabajo
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_8 = new ArrayList<Tema>();
+		Rule regla15_8 = new Rule();
+		regla15_8.setId(15_8);
+		regla15_8.setListaTemas(temasR15_8);
+		regla15_8.Respuesta = "Realizar higiene de manos frecuente durante las tareas asistenciales, y en <br>" + 
+				"		\"momentos de tareas no asistenciales.";
+		reglasPersonalSalud.add(regla15_8);
+		temasR15_8.add(t19);//recomendación
+		temasR15_8.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_9 = new ArrayList<Tema>();
+		Rule regla15_9 = new Rule();
+		regla15_9.setId(15_9);
+		regla15_9.setListaTemas(temasR15_9);
+		regla15_9.Respuesta = "Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.";
+		reglasPersonalSalud.add(regla15_9);
+		temasR15_9.add(t19);//recomendación
+		temasR15_9.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_10 = new ArrayList<Tema>();
+		Rule regla15_10 = new Rule();
+		regla15_10.setId(15_10);
+		regla15_10.setListaTemas(temasR15_10);
+		regla15_10.Respuesta = "No llevarse las manos a la cara.";
+		reglasPersonalSalud.add(regla15_10);
+		temasR15_10.add(t19);//recomendación
+		temasR15_10.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_11 = new ArrayList<Tema>();
+		Rule regla15_11 = new Rule();
+		regla15_11.setId(15_11);
+		regla15_11.setListaTemas(temasR15_11);
+		regla15_11.Respuesta = "Ventilar bien los ambientes del lugar de trabajo.";
+		reglasPersonalSalud.add(regla15_11);
+		temasR15_11.add(t19);//recomendación
+		temasR15_11.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_12 = new ArrayList<Tema>();
+		Rule regla15_12 = new Rule();
+		regla15_12.setId(15_12);
+		regla15_12.setListaTemas(temasR15_12);
+		regla15_12.Respuesta = "Desinfectar los objetos que se usan con frecuencia.";
+		reglasPersonalSalud.add(regla15_12);
+		temasR15_12.add(t19);//recomendación
+		temasR15_12.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_13 = new ArrayList<Tema>();
+		Rule regla15_13 = new Rule();
+		regla15_13.setId(15_13);
+		regla15_13.setListaTemas(temasR15_13);
+		regla15_13.Respuesta = "No compartir mate, vajilla o utensilios en el trabajo.";
+		reglasPersonalSalud.add(regla15_13);
+		temasR15_13.add(t19);//recomendación
+		temasR15_13.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas implicadas personal salud)
+		ArrayList<Tema> temasR15_14 = new ArrayList<Tema>();
+		Rule regla15_14 = new Rule();
+		regla15_14.setId(15_14);
+		regla15_14.setListaTemas(temasR15_14);
+		regla15_14.Respuesta = "Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo, <br>" + 
+				"guardapolvo), y ésta debe quedar en el ámbito laboral.";
+		reglasPersonalSalud.add(regla15_14);
+		temasR15_14.add(t19);//recomendación
+		temasR15_14.add(t35);//medico/enfermero
+
+////////////////////R		(Reglas que implican personal de la salud)
+		ArrayList<Tema> temasR16_1 = new ArrayList<Tema>();
+		Rule regla16_1 = new Rule();
+		regla16_1.setId(16_1);
+		regla16_1.setListaTemas(temasR16_1);
+		regla16_1.Respuesta = "Siendo usted personal de la salud se le recomienda:<br>1- Realizar higiene de manos frecuente durante las tareas asistenciales, y en<br>" + 
+				"momentos de tareas no asistenciales.<br>" + 
+				"2- Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.<br>" + 
+				"3- No llevarse las manos a la cara.<br>" + 
+				"4- Ventilar bien los ambientes del lugar de trabajo.<br>" + 
+				"5- Desinfectar los objetos que se usan con frecuencia.<br>" + 
+				"6- No compartir mate, vajilla o utensilios en el trabajo.<br>" + 
+				"7- Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo,<br>" + 
+				"guardapolvo), y ésta debe quedar en el ámbito laboral. <br>";
+		regla16_1.setReglasImplicadas(reglasPersonalSalud); //habilita las preguntas del personal de la salud
+		reglasGenerales.add(regla16_1);
+		temasR16_1.add(t21);//ser
+		temasR16_1.add(t31);//personal
+		temasR16_1.add(t32);//salud
+		
+		ArrayList<Integer> reglasAEliminarPersonalSalud = new ArrayList<Integer>();
+		reglasAEliminarPersonalSalud.add(16_1);
+		reglasAEliminarPersonalSalud.add(16_2);
+		reglasAEliminarPersonalSalud.add(16_3);
+		reglasAEliminarPersonalSalud.add(16_4);
+		regla16_1.setIdsReglasAEliminar(reglasAEliminarPersonalSalud);
+
+////////////////////R
+		ArrayList<Tema> temasR16_2 = new ArrayList<Tema>();
+		Rule regla16_2 = new Rule();
+		regla16_2.setId(16_2);
+		regla16_2.setListaTemas(temasR16_2);
+		regla16_2.Respuesta = "Siendo usted personal de la salud se le recomienda:<br>1- Realizar higiene de manos frecuente durante las tareas asistenciales, y en<br>" + 
+				"momentos de tareas no asistenciales.<br>" + 
+				"2- Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.<br>" + 
+				"3- No llevarse las manos a la cara.<br>" + 
+				"4- Ventilar bien los ambientes del lugar de trabajo.<br>" + 
+				"5- Desinfectar los objetos que se usan con frecuencia.<br>" + 
+				"6- No compartir mate, vajilla o utensilios en el trabajo.<br>" + 
+				"7- Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo,<br>" + 
+				"guardapolvo), y ésta debe quedar en el ámbito laboral. <br>";
+		regla16_2.setReglasImplicadas(reglasPersonalSalud); //habilita las preguntas del personal de la salud
+		reglasGenerales.add(regla16_2);
+		temasR16_2.add(t21);//ser
+		temasR16_2.add(t33);//trabajador
+		temasR16_2.add(t32);//salud
+		
+		regla16_2.setIdsReglasAEliminar(reglasAEliminarPersonalSalud);
+
+////////////////////R
+		ArrayList<Tema> temasR16_3 = new ArrayList<Tema>();
+		Rule regla16_3 = new Rule();
+		regla16_3.setId(16_3);
+		regla16_3.setListaTemas(temasR16_3);
+		regla16_3.Respuesta = "Siendo usted personal de la salud se le recomienda:<br>1- Realizar higiene de manos frecuente durante las tareas asistenciales, y en<br>" + 
+			"momentos de tareas no asistenciales.<br>" + 
+			"2- Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.<br>" + 
+			"3- No llevarse las manos a la cara.<br>" + 
+			"4- Ventilar bien los ambientes del lugar de trabajo.<br>" + 
+			"5- Desinfectar los objetos que se usan con frecuencia.<br>" + 
+			"6- No compartir mate, vajilla o utensilios en el trabajo.<br>" + 
+			"7- Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo,<br>" + 
+			"guardapolvo), y ésta debe quedar en el ámbito laboral. <br>";
+		regla16_3.setReglasImplicadas(reglasPersonalSalud); //habilita las preguntas del personal de la salud
+		reglasGenerales.add(regla16_3);
+		temasR16_3.add(t33);//trabajador
+		temasR16_3.add(t34);//hospital
+		
+		regla16_3.setIdsReglasAEliminar(reglasAEliminarPersonalSalud);
+
+////////////////////R
+		ArrayList<Tema> temasR16_4 = new ArrayList<Tema>();
+		Rule regla16_4 = new Rule();
+		regla16_4.setId(16_4);
+		regla16_4.setListaTemas(temasR16_4);
+		regla16_4.Respuesta = "Siendo usted personal de la salud se le recomienda:<br>1- Realizar higiene de manos frecuente durante las tareas asistenciales, y en <br>" + 
+		"momentos de tareas no asistenciales.<br>" + 
+		"2- Toser o estornudar sobre el pliegue del codo o utilizar pañuelos descartables.<br>" + 
+		"3- No llevarse las manos a la cara.<br>" + 
+		"4- Ventilar bien los ambientes del lugar de trabajo.<br>" + 
+		"5- Desinfectar los objetos que se usan con frecuencia.<br>" + 
+		"6- No compartir mate, vajilla o utensilios en el trabajo.<br>" + 
+		"7- Durante la jornada laboral, se debe utilizar ropa específica de trabajo (ambo,<br>" + 
+		"guardapolvo), y ésta debe quedar en el ámbito laboral. <br>";
+		regla16_4.setReglasImplicadas(reglasPersonalSalud); //habilita las preguntas del personal de la salud
+		reglasGenerales.add(regla16_4);
+		temasR16_4.add(t21);//ser
+		temasR16_4.add(t35);//medico/enfermero
+		
+		regla16_4.setIdsReglasAEliminar(reglasAEliminarPersonalSalud);
+
+
+
 		
 		
 		
+		
+		
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
+//CASOS DE ENCUESTA
 ////////////////////R
 //No es paciente de riesgo...probablemente tenga covid:
 		ArrayList<Tema> temasR103_1 = new ArrayList<Tema>();
@@ -1453,7 +1757,7 @@ public class ChatbotAgent extends Agent{
 		Rule regla103_2 = new Rule();
 		regla103_2.setId(103_2);
 		regla103_2.setListaTemas(temasR103_2);
-		regla103_2.Respuesta = "Le recomendamos que busque atención médica, no quisiéramos que su salud empeore.\n"
+		regla103_2.Respuesta = "Le recomendamos que busque atención médica, no quisiéramos que su salud empeore.<br>"
 		+ "¿Desea saber algo más?";
 		//reglasGenerales.add(regla103_2);
 		temasR103_2.add(tsi);//afirmación
@@ -1613,7 +1917,7 @@ public class ChatbotAgent extends Agent{
 		Rule regla100_3 = new Rule();
 		regla100_3.setId(100_3);
 		regla100_3.setListaTemas(temasR100_3);
-		regla100_3.Respuesta = "No se preocupe, podemos averiguarlo.\n ¿Es usted mayor de 60 años, "
+		regla100_3.Respuesta = "No se preocupe, podemos averiguarlo.<br> ¿Es usted mayor de 60 años, "
 		+ "tiene enfermedades respiratorias o cardiovasculares, o tiene usted diabetes? (al menos una opción).";
 		//reglasGenerales.add(regla100_3);
 		temasR100_3.add(tno);//negación
@@ -1635,7 +1939,7 @@ public class ChatbotAgent extends Agent{
 		Rule regla100_0 = new Rule();
 		regla100_0.setId(100_0);
 		regla100_0.setListaTemas(temasR100_0);
-		regla100_0.Respuesta = "Hola! Antes de empezar debemos hacerle una serie de preguntas.\n"
+		regla100_0.Respuesta = "Hola! Antes de empezar debemos hacerle una serie de preguntas.<br>"
 		+ "¿Es usted paciente de riesgo?";
 		//reglasGenerales.add(regla100_0);
 		temasR100_0.add(t1);//saludo
@@ -1681,6 +1985,8 @@ public class ChatbotAgent extends Agent{
 	
 	public String ejecutarRegla(String entradaUsuario) {
 		
+		InterfaceUpdater.addToLog("TEXTO ENTRADA DEL USUARIO: " + entradaUsuario);
+		
 		String respuesta = new String();
 		ArrayList<String> palabrasUtiles = GestorDeFrases.palabrasUtiles(entradaUsuario);
 		GestorDeFrases.matcheoRules(palabrasUtiles);
@@ -1694,11 +2000,13 @@ public class ChatbotAgent extends Agent{
 			ultimaRespuestaAgente = respuesta;
 		}
 		else {
-			respuesta = "Ups! No cuento con información para entender esa pregunta, intente ser más específico po favó.\n"
-					+ "Lo último que te había dicho era:\n"
+			InterfaceUpdater.addToLog("SIN COINCIDENCIA.");
+			respuesta = "Ups! No cuento con información para entender esa pregunta, intente ser más específico por favor :(<br>"
+					+ "Lo último que le había dicho era:<br>"
 					+ this.ultimaRespuestaAgente;
 		}
 		
+		InterfaceUpdater.addToLog("RESPUESTA DEVUELTA POR EL AGENTE: "+ respuesta + "\r\n");
 		System.out.println("Respuesta devuelta por el agente: "+ respuesta);
 		
 		return respuesta;
@@ -1715,6 +2023,8 @@ public class ChatbotAgent extends Agent{
 	}
 	
 	public String learn (String entradaUsuario) {
+		
+		InterfaceUpdater.addToLog("TEXTO ENTRADA DEL USUARIO: " + entradaUsuario);
 		
 		//1. Especificidad
 		//2. No Duplicidad
@@ -1765,10 +2075,11 @@ public class ChatbotAgent extends Agent{
 			}
 		}
 		else {
-			respuesta = "Ups! No cuento con información para entender esa pregunta, intente ser más específico po favó.\n";
+			InterfaceUpdater.addToLog("SIN COINCIDENCIA.");
+			respuesta = "Ups! No cuento con información para entender esa pregunta, intente ser más específico por favor  :(<br>";
 		}
 		
-		
+		InterfaceUpdater.addToLog("RESPUESTA DEVUELTA POR EL AGENTE: "+ respuesta + "\r\n");
 		System.out.println("Respuesta devuelta por el agente: "+ respuesta);
 		return respuesta;
 		
