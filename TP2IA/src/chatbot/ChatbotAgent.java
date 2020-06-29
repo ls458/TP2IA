@@ -44,6 +44,9 @@ public class ChatbotAgent extends Agent{
 		sinonimosT2.add("chau");
 		sinonimosT2.add("adios");
 		sinonimosT2.add("saludos");
+		sinonimosT2.add("nosvemos");
+		sinonimosT2.add("hastaluego");
+		sinonimosT2.add("hastapronto");
 		Tema t2 = new Tema("Despedida", sinonimosT2);
 		
 		listaTemas.add(t2);
@@ -371,6 +374,14 @@ public class ChatbotAgent extends Agent{
 		Tema t35 = new Tema("medico", sinonimosT35);
 										
 		listaTemas.add(t35);
+		
+		//santafe -> santafe
+		ArrayList<String> sinonimosT36 = new ArrayList<String>();
+		sinonimosT36.add("santafe");
+												
+		Tema t36 = new Tema("santafe", sinonimosT36);
+												
+		listaTemas.add(t36);
 		
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 //Regla terminación
@@ -1046,6 +1057,110 @@ public class ChatbotAgent extends Agent{
 		temasR9_8.add(t5);//ciudad
 		
 ////////////////////R
+		ArrayList<Tema> temasR9_9 = new ArrayList<Tema>();
+		Rule regla9_9 = new Rule();
+		regla9_9.setId(9_9);
+		regla9_9.setListaTemas(temasR9_9);
+		regla9_9.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
+		reglasGenerales.add(regla9_9);
+		temasR9_9.add(t16);//numero
+		temasR9_9.add(t4);//casos
+		temasR9_9.add(t5);//ciudad
+		temasR9_9.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_10 = new ArrayList<Tema>();
+		Rule regla9_10 = new Rule();
+		regla9_10.setId(9_10);
+		regla9_10.setListaTemas(temasR9_10);
+		regla9_10.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
+		reglasGenerales.add(regla9_10);
+		temasR9_10.add(t16);//numero
+		temasR9_10.add(t12);//infectados
+		temasR9_10.add(t5);//ciudad
+		temasR9_10.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_11 = new ArrayList<Tema>();
+		Rule regla9_11 = new Rule();
+		regla9_11.setId(9_11);
+		regla9_11.setListaTemas(temasR9_11);
+		regla9_11.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
+		reglasGenerales.add(regla9_11);
+		temasR9_11.add(t16);//numero
+		temasR9_11.add(t4);//casos
+		temasR9_11.add(t8);//coronavirus
+		temasR9_11.add(t5);//ciudad
+		temasR9_11.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_12 = new ArrayList<Tema>();
+		Rule regla9_12 = new Rule();
+		regla9_12.setId(9_12);
+		regla9_12.setListaTemas(temasR9_12);
+		regla9_12.Respuesta = "La cantidad de infectados en la ciudad es de ____________";
+		reglasGenerales.add(regla9_12);
+		temasR9_12.add(t16);//numero
+		temasR9_12.add(t12);//infectados
+		temasR9_12.add(t8);//coronavirus
+		temasR9_12.add(t5);//ciudad
+		temasR9_12.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_13 = new ArrayList<Tema>();
+		Rule regla9_13 = new Rule();
+		regla9_13.setId(9_13);
+		regla9_13.setListaTemas(temasR9_13);
+		regla9_13.Respuesta = "La cantidad de infectados en la ciudad es de ____________, de los cuales, "
+			+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla9_13);
+		temasR9_13.add(t16);//numero
+		temasR9_13.add(t4);//casos
+		temasR9_13.add(t5);//ciudad
+		temasR9_13.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_14 = new ArrayList<Tema>();
+		Rule regla9_14 = new Rule();
+		regla9_14.setId(9_14);
+		regla9_14.setListaTemas(temasR9_14);
+		regla9_14.Respuesta = "La cantidad de infectados en la ciudad es de ____________, de los cuales, "
+			+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla9_14);
+		temasR9_14.add(t16);//numero
+		temasR9_14.add(t12);//infectados
+		temasR9_14.add(t5);//ciudad
+		temasR9_14.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_15 = new ArrayList<Tema>();
+		Rule regla9_15 = new Rule();
+		regla9_15.setId(9_15);
+		regla9_15.setListaTemas(temasR9_15);
+		regla9_15.Respuesta = "La cantidad de infectados en la ciudad es de ____________, de los cuales, "
+			+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla9_15);
+		temasR9_15.add(t16);//numero
+		temasR9_15.add(t4);//casos
+		temasR9_15.add(t8);//coronavirus
+		temasR9_15.add(t5);//ciudad
+		temasR9_15.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR9_16 = new ArrayList<Tema>();
+		Rule regla9_16 = new Rule();
+		regla9_16.setId(9_16);
+		regla9_16.setListaTemas(temasR9_16);
+		regla9_16.Respuesta = "La cantidad de infectados en la ciudad es de ____________, de los cuales, "
+			+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla9_16);
+		temasR9_16.add(t16);//numero
+		temasR9_16.add(t12);//infectados
+		temasR9_16.add(t8);//coronavirus
+		temasR9_16.add(t5);//ciudad
+		temasR9_16.add(t36);//santafe
+		
+////////////////////R
 		ArrayList<Tema> temasR10_1 = new ArrayList<Tema>();
 		Rule regla10_1 = new Rule();
 		regla10_1.setId(10_1);
@@ -1140,6 +1255,110 @@ public class ChatbotAgent extends Agent{
 		temasR10_8.add(t12);//infectados
 		temasR10_8.add(t8);//coronavirus
 		temasR10_8.add(t18);//provincia
+		
+////////////////////R
+		ArrayList<Tema> temasR10_9 = new ArrayList<Tema>();
+		Rule regla10_9 = new Rule();
+		regla10_9.setId(10_9);
+		regla10_9.setListaTemas(temasR10_9);
+		regla10_9.Respuesta = "La cantidad de infectados en la provincia es de ____________";
+		reglasGenerales.add(regla10_9);
+		temasR10_9.add(t16);//numero
+		temasR10_9.add(t4);//casos
+		temasR10_9.add(t18);//provincia
+		temasR10_9.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_10 = new ArrayList<Tema>();
+		Rule regla10_10 = new Rule();
+		regla10_10.setId(10_10);
+		regla10_10.setListaTemas(temasR10_10);
+		regla10_10.Respuesta = "La cantidad de infectados en la provincia es de ____________";
+		reglasGenerales.add(regla10_10);
+		temasR10_10.add(t16);//numero
+		temasR10_10.add(t12);//infectados
+		temasR10_10.add(t18);//provincia
+		temasR10_10.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_11 = new ArrayList<Tema>();
+		Rule regla10_11 = new Rule();
+		regla10_11.setId(10_11);
+		regla10_11.setListaTemas(temasR10_11);
+		regla10_11.Respuesta = "La cantidad de infectados en la provincia es de ____________";
+		reglasGenerales.add(regla10_11);
+		temasR10_11.add(t16);//numero
+		temasR10_11.add(t4);//casos
+		temasR10_11.add(t8);//coronavirus
+		temasR10_11.add(t18);//provincia
+		temasR10_11.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_12 = new ArrayList<Tema>();
+		Rule regla10_12 = new Rule();
+		regla10_12.setId(10_12);
+		regla10_12.setListaTemas(temasR10_12);
+		regla10_12.Respuesta = "La cantidad de infectados en la provincia es de ____________";
+		reglasGenerales.add(regla10_12);
+		temasR10_12.add(t16);//numero
+		temasR10_12.add(t12);//infectados
+		temasR10_12.add(t8);//coronavirus
+		temasR10_12.add(t18);//provincia
+		temasR10_12.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_13 = new ArrayList<Tema>();
+		Rule regla10_13 = new Rule();
+		regla10_13.setId(10_13);
+		regla10_13.setListaTemas(temasR10_13);
+		regla10_13.Respuesta = "La cantidad de infectados en la provincia es de ____________, de los cuales, "
+		+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla10_13);
+		temasR10_13.add(t16);//numero
+		temasR10_13.add(t4);//casos
+		temasR10_13.add(t18);//provincia
+		temasR10_13.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_14 = new ArrayList<Tema>();
+		Rule regla10_14 = new Rule();
+		regla10_14.setId(10_14);
+		regla10_14.setListaTemas(temasR10_14);
+		regla10_14.Respuesta = "La cantidad de infectados en la provincia es de ____________, de los cuales, "
+		+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla10_14);
+		temasR10_14.add(t16);//numero
+		temasR10_14.add(t12);//infectados
+		temasR10_14.add(t18);//provincia
+		temasR10_14.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_15 = new ArrayList<Tema>();
+		Rule regla10_15 = new Rule();
+		regla10_15.setId(10_15);
+		regla10_15.setListaTemas(temasR10_15);
+		regla10_15.Respuesta = "La cantidad de infectados en la provincia es de ____________, de los cuales, "
+		+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla10_15);
+		temasR10_15.add(t16);//numero
+		temasR10_15.add(t4);//casos
+		temasR10_15.add(t8);//coronavirus
+		temasR10_15.add(t18);//provincia
+		temasR10_15.add(t36);//santafe
+
+////////////////////R
+		ArrayList<Tema> temasR10_16 = new ArrayList<Tema>();
+		Rule regla10_16 = new Rule();
+		regla10_16.setId(10_16);
+		regla10_16.setListaTemas(temasR10_16);
+		regla10_16.Respuesta = "La cantidad de infectados en la provincia es de ____________, de los cuales, "
+		+ "____________ fueron en las últimas 24 horas.";
+		reglasGenerales.add(regla10_16);
+		temasR10_16.add(t16);//numero
+		temasR10_16.add(t12);//infectados
+		temasR10_16.add(t8);//coronavirus
+		temasR10_16.add(t18);//provincia
+		temasR10_16.add(t36);//santafe
 		
 ////////////////////R
 		ArrayList<Tema> temasR11_1 = new ArrayList<Tema>();
@@ -2083,6 +2302,12 @@ public class ChatbotAgent extends Agent{
 		System.out.println("Respuesta devuelta por el agente: "+ respuesta);
 		return respuesta;
 		
+	}
+	
+	public String see() {
+		String textoUsuario = ChatbotEnvironment.respuestaUsuario;
+		ChatbotEnvironment.respuestaUsuario = null;
+		return textoUsuario;
 	}
 	
 }

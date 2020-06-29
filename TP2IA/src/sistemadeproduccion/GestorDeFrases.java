@@ -11,8 +11,10 @@ public class GestorDeFrases {
 	public static ArrayList<String> palabrasUtiles (String textoUsuario){
 		ArrayList<String> palabras = new ArrayList<String>();
 		
-		String[] palabrasBase = textoUsuario.toLowerCase().replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
-				.replace(',', ' ').replace('!', ' ').replace('¡', ' ').replace('.', ' ').replace('?', ' ').replace('¿', ' ').replace(';', ' ').split(" ");
+		textoUsuario = textoUsuario.toLowerCase().replace('á', 'a').replace('é', 'e').replace('í', 'i').replace('ó', 'o').replace('ú', 'u')
+				.replace(',', ' ').replace('!', ' ').replace('¡', ' ').replace('.', ' ').replace('?', ' ').replace('¿', ' ').replace(';', ' ')
+				.replace("santa fe", "santafe").replace("nos vemos", "nosvemos").replace("hasta luego", "hastaluego").replace("hasta pronto", "hastapronto");
+		String[] palabrasBase = textoUsuario.split(" ");
 		
 		String aux;
 		for(int i=0; i<palabrasBase.length; i++) {

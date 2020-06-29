@@ -10,7 +10,6 @@ import java.util.Vector;
 import chatbot.ChatbotAgent;
 import chatbot.ChatbotEnvironment;
 import sistemadeproduccion.GestorDeFrases;
-import sistemadeproduccion.ProductionSystemAction;
 import tp2ia.InterfaceUpdater;
 import frsf.cidisi.faia.agent.Action;
 import frsf.cidisi.faia.agent.Agent;
@@ -86,9 +85,10 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         		try { Thread.sleep(SLEEP_TIME); }
         		catch (InterruptedException e) { e.printStackTrace(); }
         	}
-        	inputUsuario = ChatbotEnvironment.respuestaUsuario;
-        	ChatbotEnvironment.respuestaUsuario = null;
+        	
+        	inputUsuario = agent.see();
             respuesta = agent.ejecutarRegla(inputUsuario);
+        	
         	
             if (respuesta == null)
             	System.out.println("\nRule to execute: None");
@@ -103,21 +103,6 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         
         
         do {
-
-            //System.out.println("------------------------------------");
-
-            //System.out.println("Sending perception to agent...");
-            //perception = this.getPercept();
-//            agent.see(perception);
-            //System.out.println("Perception: " + perception);
-
-//            System.out.println("Agent State: " + agent.getAgentState());
-            //System.out.println("Environment: " + environment);
-
-            //System.out.println("Asking the agent that start the learning process...");
-            
-//            Scanner in= new Scanner(System.in);
-//            String inputUsuario = in.next();
             
         	//Espera hasta que el usuario introdusca una respuesta para el chatbot
         	while(ChatbotEnvironment.respuestaUsuario == null) {
@@ -125,8 +110,8 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         		try { Thread.sleep(SLEEP_TIME); }
         		catch (InterruptedException e) { e.printStackTrace(); }
         	}
-        	inputUsuario = ChatbotEnvironment.respuestaUsuario;
-        	ChatbotEnvironment.respuestaUsuario = null;
+        	
+        	inputUsuario = agent.see();
             respuesta = agent.learn(inputUsuario);
 
             if (respuesta == null)
@@ -159,31 +144,9 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         SimulatorEventNotifier.runEventHandlers(EventType.SimulationFinished, null);
 		
 	}
-
-	protected boolean finishForAgentState(Agent agent) {
-		// TODO Futuro: Ver como deberá ser este método
-		return false;
-	}
-
-	protected boolean finishForRule(Action action) {
-		// TODO Futuro: Ver como deberá ser este método
-		return false;
-	}
 	
 	public String getSimulatorName() {
         return "Knowledge Based Simulator";
     }
-
-//    public void ruleReturned(Agent agent,Action action) {
-//        if(action!=null)
-//        {
-//        	this.updateState(action);
-//        }
-//    }
-    
-//    protected void updateState(Action action) {
-//    	//TODO Futuro: Esta hecho para el ChatBot pero debería incluirse en otro lugar el metodo requerido.
-//        this.getEnvironment().updateState(((ChatbotAgent) agents.elementAt(0)).getAgentState(), action);
-//    }
     
 }
