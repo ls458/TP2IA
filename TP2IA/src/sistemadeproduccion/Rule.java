@@ -11,8 +11,6 @@ public class Rule {
 	public static final int IMPLICAREGLASYELIMINALISTA=0;
 	public static final int IMPLICAREGLASYELIMINAANTERIORES=1;
 	
-//	Object condition;
-//	Object then;
 	ArrayList<Tema> listaTemas;
 	Integer acciones;//  0:implicar reglas 
 					 //  1:implicar reglas y borrar su antecedente de la MP
@@ -65,22 +63,6 @@ public class Rule {
 		priority = p;
 	}
 	
-//	public void setCondition(Object o){
-//		condition = o;
-//	}
-//	
-//	public Object getCondition(){
-//		return condition;
-//	}
-//	
-//	public void setThen(Object t){
-//		then = t;
-//	}
-//	
-//	public Object getThen(){
-//		return then;
-//	}
-	
 	public int getNoDuplication() {
 		return noDuplication;
 	}
@@ -92,8 +74,6 @@ public class Rule {
 	public boolean equals(Rule aRule){		
 		return (id==aRule.getId().intValue());
 	}
-	
-//	public abstract boolean isActive(Object status);
 
 	public ArrayList<Tema> getListaTemas() {
 		return listaTemas;

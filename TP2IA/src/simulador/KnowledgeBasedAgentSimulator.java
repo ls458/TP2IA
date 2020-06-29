@@ -54,9 +54,7 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
         System.out.println("--- " + this.getSimulatorName() + " ---");
         System.out.println("----------------------------------------------------");
         System.out.println();
-
         
-        //TODO Futuro: Esta hecho para el ChatBot pero debería incluirse el método learn en la clase agente.
         ChatbotAgent agent;
 
         agent = (ChatbotAgent) this.getAgents().firstElement();

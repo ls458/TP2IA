@@ -185,13 +185,6 @@ public class ChatbotAgent extends Agent{
 		
 		listaTemas.add(t14);
 		
-//		//no -> no
-//		ArrayList<String> sinonimosT15 = new ArrayList<String>();
-//		sinonimosT15.add("no");
-//		Tema t15 = new Tema("no", sinonimosT15);
-//		
-//		listaTemas.add(t15);
-		
 		//numero -> numero cantidad
 		ArrayList<String> sinonimosT16 = new ArrayList<String>();
 		sinonimosT16.add("numero");
@@ -431,7 +424,6 @@ public class ChatbotAgent extends Agent{
 				"agua y jabón o un desinfectante de manos a " + 
 				"base de alcohol.";
 		reglasGenerales.add(regla2_1);
-//		temasR2_1.add(t7);//que
 		temasR2_1.add(t19);//recomendacion
 		temasR2_1.add(tno);//no
 		temasR2_1.add(t6);//contagio
@@ -444,7 +436,6 @@ public class ChatbotAgent extends Agent{
 		regla2_2.Respuesta = "Manténgase a una distancia segura de cualquier "
 				+ "persona que tosa o estornude. No se toque los ojos, la nariz o la boca.";
 		reglasGenerales.add(regla2_2);
-//		temasR2_2.add(t7);//que
 		temasR2_2.add(t19);//recomendacion
 		temasR2_2.add(tno);//no
 		temasR2_2.add(t6);//contagio
@@ -457,7 +448,6 @@ public class ChatbotAgent extends Agent{
 		regla2_3.Respuesta = "Cuando tosa o estornude, cúbrase la nariz y "
 				+ "la boca con el codo flexionado o con un pañuelo.";
 		reglasGenerales.add(regla2_3);
-//		temasR2_3.add(t7);//que
 		temasR2_3.add(t19);//recomendacion
 		temasR2_3.add(tno);//no
 		temasR2_3.add(t6);//contagio
@@ -469,7 +459,6 @@ public class ChatbotAgent extends Agent{
 		regla2_4.setListaTemas(temasR2_4);
 		regla2_4.Respuesta = "Quédese en casa. En caso de salir use barbijo.";
 		reglasGenerales.add(regla2_4);
-//		temasR2_4.add(t7);//que
 		temasR2_4.add(t19);//recomendacion
 		temasR2_4.add(tno);//no
 		temasR2_4.add(t6);//contagio
@@ -483,7 +472,6 @@ public class ChatbotAgent extends Agent{
 				+ "perjudicar a personas más vulnerables que usted.";
 		regla2_5.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasNoRiesgoSiInfectado.add(regla2_5);
-//		temasR2_5.add(t7);//que
 		temasR2_5.add(t19);//recomendacion
 		temasR2_5.add(tno);//no
 		temasR2_5.add(t6);//contagio
@@ -497,7 +485,6 @@ public class ChatbotAgent extends Agent{
 				+ "su salud es muy importante para nosotros, y su caso tendrá prioridad en los centros de salud.";
 		regla2_6.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasSiRiesgoSiInfectado.add(regla2_6);
-//		temasR2_6.add(t7);//que
 		temasR2_6.add(t19);//recomendacion
 		temasR2_6.add(tno);//no
 		temasR2_6.add(t6);//contagio
@@ -511,7 +498,6 @@ public class ChatbotAgent extends Agent{
 				+ "lo primordial.";
 		regla2_7.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasSiRiesgoNoInfectado.add(regla2_7);
-//		temasR2_7.add(t7);//que
 		temasR2_7.add(t19);//recomendacion
 		temasR2_7.add(tno);//no
 		temasR2_7.add(t6);//contagio
@@ -526,7 +512,6 @@ public class ChatbotAgent extends Agent{
 				+ "de su casa.";
 		regla2_8.setPriority(1); //Añade prioridad 1 por ser una respuesta particular
 		reglasNoRiesgoNoInfectado.add(regla2_8);
-//		temasR2_8.add(t7);//que
 		temasR2_8.add(t19);//recomendacion
 		temasR2_8.add(tno);//no
 		temasR2_8.add(t6);//contagio
@@ -544,9 +529,6 @@ public class ChatbotAgent extends Agent{
 		temasR3_1.add(t7);//que
 		temasR3_1.add(t22);//sintoma
 		temasR3_1.add(t24);//tener
-//		temasR3_1.add(t8);//coronavirus
-//		temasR3_1.add(t9);//cual
-//		temasR3_1.add(t21);//ser
 		
 ////////////////////R
 		ArrayList<Tema> temasR3_2 = new ArrayList<Tema>();
@@ -573,9 +555,6 @@ public class ChatbotAgent extends Agent{
 		temasR3_3.add(t7);//que
 		temasR3_3.add(t22);//sintoma
 		temasR3_3.add(t24);//tener
-//		temasR3_3.add(t8);//coronavirus
-//		temasR3_3.add(t9);//cual
-//		temasR3_3.add(t21);//son
 		
 ////////////////////R
 		ArrayList<Tema> temasR3_4 = new ArrayList<Tema>();
@@ -1960,7 +1939,6 @@ public class ChatbotAgent extends Agent{
 		regla103_1.setListaTemas(temasR103_1);
 		regla103_1.Respuesta = "Manténgase tranquilo, usted no es paciente de riesgo. Si la situación empeora "
 		+ "no dude en buscar asistencia médica. ¿Tiene alguna pregunta para hacer?";
-		//reglasGenerales.add(regla103_1);
 		temasR103_1.add(tsi);//afirmación
 		
 		regla103_1.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -1978,7 +1956,6 @@ public class ChatbotAgent extends Agent{
 		regla103_2.setListaTemas(temasR103_2);
 		regla103_2.Respuesta = "Le recomendamos que busque atención médica, no quisiéramos que su salud empeore.<br>"
 		+ "¿Desea saber algo más?";
-		//reglasGenerales.add(regla103_2);
 		temasR103_2.add(tsi);//afirmación
 		
 		regla103_2.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -1999,7 +1976,6 @@ public class ChatbotAgent extends Agent{
 		regla102_3.setId(102_3);
 		regla102_3.setListaTemas(temasR102_3);
 		regla102_3.Respuesta = "Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?";
-		//reglasGenerales.add(regla102_3);
 		temasR102_3.add(tno);//negación
 		
 		regla102_3.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2016,7 +1992,6 @@ public class ChatbotAgent extends Agent{
 		regla102_4.setId(102_4);
 		regla102_4.setListaTemas(temasR102_4);
 		regla102_4.Respuesta = "Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?";
-		//reglasGenerales.add(regla102_4);
 		temasR102_4.add(tno);//negación
 		
 		regla102_4.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2035,7 +2010,6 @@ public class ChatbotAgent extends Agent{
 		regla102_1.Respuesta = "Veamos...¿tiene usted fiebre, tos (seca), y principalmente, "
 				+ "tiene dificultades respiratorias? (si la respuesta es no, no hay "
 				+ "motivos para preocuparse).";
-		//reglasGenerales.add(regla102_1);
 		temasR102_1.add(tsi);//afirmación
 		
 		regla102_1.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2052,7 +2026,6 @@ public class ChatbotAgent extends Agent{
 		regla102_2.Respuesta = "Veamos...¿tiene usted fiebre, tos (seca), y principalmente, "
 				+ "tiene dificultades respiratorias? (si la respuesta es no, no hay "
 				+ "motivos para preocuparse).";
-		//reglasGenerales.add(regla102_2);
 		temasR102_2.add(tsi);//afirmación
 		
 		regla102_2.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  1:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2072,7 +2045,6 @@ public class ChatbotAgent extends Agent{
 		regla101_1.setId(101_1);
 		regla101_1.setListaTemas(temasR101_1);
 		regla101_1.Respuesta = "Entendido. ¿Está usted en duda de ser portador de la enfermedad COVID-19?";
-		//reglasGenerales.add(regla101_1);
 		temasR101_1.add(tsi);//afirmación
 		
 		regla101_1.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  2:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2087,7 +2059,6 @@ public class ChatbotAgent extends Agent{
 		regla101_2.setId(101_2);
 		regla101_2.setListaTemas(temasR101_2);
 		regla101_2.Respuesta = "Perfecto. ¿Está usted en duda de ser portador de la enfermedad COVID-19?";
-		//reglasGenerales.add(regla101_2);
 		temasR101_2.add(tno);//negación
 		
 		regla101_2.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  2:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2107,7 +2078,6 @@ public class ChatbotAgent extends Agent{
 		regla100_1.setId(100_1);
 		regla100_1.setListaTemas(temasR100_1);
 		regla100_1.Respuesta = "Entendido. ¿Está usted en duda de ser portador de la enfermedad COVID-19?";
-		//reglasGenerales.add(regla100_1);
 		temasR100_1.add(tsi);//afirmación
 		
 		regla100_1.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  2:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2122,7 +2092,6 @@ public class ChatbotAgent extends Agent{
 		regla100_2.setId(100_2);
 		regla100_2.setListaTemas(temasR100_2);
 		regla100_2.Respuesta = "Perfecto. ¿Está usted en duda de ser portador de la enfermedad COVID-19?";
-		//reglasGenerales.add(regla100_2);
 		temasR100_2.add(tno);//negación
 		
 		regla100_2.setAcciones(Rule.IMPLICAREGLASYELIMINAANTERIORES);//  2:implicar reglas y borrar todas las reglas anteriores de la MP
@@ -2138,7 +2107,6 @@ public class ChatbotAgent extends Agent{
 		regla100_3.setListaTemas(temasR100_3);
 		regla100_3.Respuesta = "No se preocupe, podemos averiguarlo.<br> ¿Es usted mayor de 60 años, "
 		+ "tiene enfermedades respiratorias o cardiovasculares, o tiene usted diabetes? (al menos una opción).";
-		//reglasGenerales.add(regla100_3);
 		temasR100_3.add(tno);//negación
 		temasR100_3.add(tsaber);//saber
 		
@@ -2160,7 +2128,6 @@ public class ChatbotAgent extends Agent{
 		regla100_0.setListaTemas(temasR100_0);
 		regla100_0.Respuesta = "Hola! Antes de empezar debemos hacerle una serie de preguntas.<br>"
 		+ "¿Es usted paciente de riesgo?";
-		//reglasGenerales.add(regla100_0);
 		temasR100_0.add(t1);//saludo
 		
 		regla100_0.getReglasImplicadas().add(regla100_1);
@@ -2171,33 +2138,14 @@ public class ChatbotAgent extends Agent{
 		
 		ChatbotAgent.reglaInicial = regla100_0;
 
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		return reglasGenerales;
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-
 	public void empezarConversacion() {
 		ChatbotEnvironment.reglasMemoriaProduccion.add(ChatbotAgent.reglaInicial);
 	}
