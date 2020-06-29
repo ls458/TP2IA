@@ -1,4 +1,98 @@
-[29/06/2020 01:16:58]: TEXTO ENTRADA DEL USUARIO: Hola
-[29/06/2020 01:16:58]: Regla salida especificidad [id: 1000]: (Saludo), especificidad:1
-[29/06/2020 01:16:58]: RESPUESTA DEVUELTA POR EL AGENTE: Hola! Antes de empezar debemos hacerle una serie de preguntas.<br>¿Es usted paciente de riesgo?
+[29/06/2020 02:21:56]: TEXTO ENTRADA DEL USUARIO: Hola
+[29/06/2020 02:21:56]: Regla salida especificidad [id: 1000]: (Saludo), especificidad:1
+[29/06/2020 02:21:56]: RESPUESTA DEVUELTA POR EL AGENTE: Hola! Antes de empezar debemos hacerle una serie de preguntas.<br>¿Es usted paciente de riesgo?
+
+[29/06/2020 02:22:01]: TEXTO ENTRADA DEL USUARIO: no
+[29/06/2020 02:22:01]: Regla salida especificidad [id: 1002]: (negación), especificidad:1
+[29/06/2020 02:22:01]: RESPUESTA DEVUELTA POR EL AGENTE: Perfecto. ¿Está usted en duda de ser portador de la enfermedad COVID-19?
+
+[29/06/2020 02:22:08]: TEXTO ENTRADA DEL USUARIO: no
+[29/06/2020 02:22:08]: Regla salida especificidad [id: 1023]: (negación), especificidad:1
+[29/06/2020 02:22:08]: RESPUESTA DEVUELTA POR EL AGENTE: Excelente! Eso fue todo. ¿Tiene alguna pregunta para hacer?
+
+[29/06/2020 02:22:16]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:22:16]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:22:16]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:22:16]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:22:16]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:22:16]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:22:16]: Regla salida no duplicación [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:22:16]: Regla salida no duplicación [id: 22]: (recomendacion,negación,contagio)
+[29/06/2020 02:22:16]: Regla salida no duplicación [id: 23]: (recomendacion,negación,contagio)
+[29/06/2020 02:22:16]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:22:16]: Regla salida no duplicación [id: 28]: (recomendacion,negación,contagio)
+[29/06/2020 02:22:16]: Regla salida prioridad [id: 28]: (recomendacion,negación,contagio), prioridad:1
+[29/06/2020 02:22:16]: RESPUESTA DEVUELTA POR EL AGENTE: Salga de su casa solo si es necesario. Intente colaborar con la gente que sí tiene riesgos con esta enfermedad por lo que no puede salir casi en lo absoluto de su casa.
+
+[29/06/2020 02:23:24]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:23:24]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:23:24]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:23:24]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:23:24]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:23:24]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:23:24]: Regla salida no duplicación [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:23:24]: Regla salida no duplicación [id: 22]: (recomendacion,negación,contagio)
+[29/06/2020 02:23:24]: Regla salida no duplicación [id: 23]: (recomendacion,negación,contagio)
+[29/06/2020 02:23:24]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:23:24]: Regla salida prioridad [id: 21]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:23:24]: Regla salida prioridad [id: 22]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:23:24]: Regla salida prioridad [id: 23]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:23:24]: Regla salida prioridad [id: 24]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:23:24]: Regla salida random [id: 22]: (recomendacion,negación,contagio)
+[29/06/2020 02:23:24]: RESPUESTA DEVUELTA POR EL AGENTE: Manténgase a una distancia segura de cualquier persona que tosa o estornude. No se toque los ojos, la nariz o la boca.
+
+[29/06/2020 02:24:19]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:24:19]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:19]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:19]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:19]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:19]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:19]: Regla salida no duplicación [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:19]: Regla salida no duplicación [id: 23]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:19]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:19]: Regla salida prioridad [id: 21]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:24:19]: Regla salida prioridad [id: 23]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:24:19]: Regla salida prioridad [id: 24]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:24:19]: Regla salida random [id: 23]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:19]: RESPUESTA DEVUELTA POR EL AGENTE: Cuando tosa o estornude, cúbrase la nariz y la boca con el codo flexionado o con un pañuelo.
+
+[29/06/2020 02:24:29]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:24:29]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:29]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:29]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:29]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:29]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:29]: Regla salida no duplicación [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:29]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:29]: Regla salida prioridad [id: 21]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:24:29]: Regla salida prioridad [id: 24]: (recomendacion,negación,contagio), prioridad:0
+[29/06/2020 02:24:29]: Regla salida random [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:29]: RESPUESTA DEVUELTA POR EL AGENTE: Lávese las manos con frecuencia. Use agua y jabón o un desinfectante de manos a base de alcohol.
+
+[29/06/2020 02:24:36]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:24:36]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:36]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:36]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:36]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:36]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:36]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:36]: RESPUESTA DEVUELTA POR EL AGENTE: Quédese en casa. En caso de salir use barbijo.
+
+[29/06/2020 02:24:46]: TEXTO ENTRADA DEL USUARIO: recomendacion no contagio
+[29/06/2020 02:24:46]: Regla salida especificidad [id: 21]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:46]: Regla salida especificidad [id: 22]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:46]: Regla salida especificidad [id: 23]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:46]: Regla salida especificidad [id: 24]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:46]: Regla salida especificidad [id: 28]: (recomendacion,negación,contagio), especificidad:3
+[29/06/2020 02:24:46]: Regla salida no duplicación [id: 21]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:46]: Regla salida no duplicación [id: 22]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:46]: Regla salida no duplicación [id: 23]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:46]: Regla salida no duplicación [id: 24]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:46]: Regla salida no duplicación [id: 28]: (recomendacion,negación,contagio)
+[29/06/2020 02:24:46]: Regla salida prioridad [id: 28]: (recomendacion,negación,contagio), prioridad:1
+[29/06/2020 02:24:46]: RESPUESTA DEVUELTA POR EL AGENTE: Salga de su casa solo si es necesario. Intente colaborar con la gente que sí tiene riesgos con esta enfermedad por lo que no puede salir casi en lo absoluto de su casa.
+
+[29/06/2020 02:25:01]: TEXTO ENTRADA DEL USUARIO: hasta luego
+[29/06/2020 02:25:01]: Regla salida especificidad [id: 2147483647]: (Despedida), especificidad:1
+[29/06/2020 02:25:01]: RESPUESTA DEVUELTA POR EL AGENTE: Adiós! Me alegra haber podido aclarar tus dudas!<br>Me voy en 5...4...3...
 

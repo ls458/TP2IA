@@ -52,7 +52,7 @@
             </HBox>
             <HBox prefHeight="30.0" prefWidth="200.0">
                <children>
-                  <TextField fx:id="tfInput" promptText="Pregunte aquí..." HBox.hgrow="ALWAYS">
+                  <TextField fx:id="tfInput" promptText="Pregunte aquí..." HBox.hgrow="ALWAYS" onAction="#agregarRespuestaUsuario">
                      <HBox.margin>
                         <Insets left="15.0" right="5.0" />
                      </HBox.margin>
