@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -115,5 +116,10 @@ public class ChatWindowController implements Initializable {
     		}
     		thre.interrupt();
     	}
+    }
+    
+    public void cambiarIcon() {
+    	((Stage) tfInput.getScene().getWindow()).getIcons().clear();
+    	((Stage) tfInput.getScene().getWindow()).getIcons().add(new Image (TP2IA.class.getResourceAsStream("resources/icon2.png")));
     }
 }

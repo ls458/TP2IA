@@ -124,7 +124,7 @@ public class KnowledgeBasedAgentSimulator extends frsf.cidisi.faia.simulator.Sim
 
         } while(respuesta != "Adiós! Me alegra haber podido aclarar tus dudas!<br>"
 				+ "Me voy en 5...4...3...");
-        
+        InterfaceUpdater.cambiarIcon();
         try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {

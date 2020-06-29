@@ -72,4 +72,18 @@ public class InterfaceUpdater {
 	public static void addToLog(String text) {
 		logger.info(text);
 	}
+	
+	public static void cambiarIcon() {
+		Thread thre = new Thread() {
+			public void run(){
+				Platform.runLater(new Runnable(){
+					@Override
+					public void run() {
+						chatWindow.cambiarIcon();
+					}
+				});
+			}
+		};
+		thre.start();
+	}
 }

@@ -17,7 +17,6 @@ import javafx.stage.Stage;
  * @author usuario
  */
 public class TP2IA extends Application {
-    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("ChatWindow.fxml"));
